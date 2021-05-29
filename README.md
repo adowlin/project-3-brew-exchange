@@ -9,13 +9,29 @@ With a large variety of brewing equipment, coffee varieties, and brewing methods
  
 ## User Experience (UX)
 
+The User Experience for this site was planned & developed using the [5 Planes of UX Design](https://medium.com/designcentered/ux-design-5-planes-method-b1b1d6587c05): Strategy, Scope, Structure, Skeleton, Surface.
+
 ### User Stories
 
 - As a first-time visitor, I want to:
-    - 
+    - See coffee recipes that other users have added.
+    - Search for recipes by keywords.
+    - Register an account to add my own recipes.
 
 - As a returning visitor, I want to:
-    - 
+    - See coffee recipes added by other users.
+    - Search for recipes by keyword.
+    - Log in to my account to see receipes I have added.
+    - Edit recipes that I have added.
+    - Delete receipes that I have added.
+
+- As the site owner, I want to:
+    - Log in to my admin/superuser account.
+    - Add brew method categories for users to choose from when creating recipes.
+    - Edit brew method categories.
+    - Delete brew method categories.
+
+### Structure
 
 ### Design
 
@@ -24,8 +40,6 @@ With a large variety of brewing equipment, coffee varieties, and brewing methods
 - Typography:
 
 - Images:
-
-### Wireframes
 
 ## Features
 
