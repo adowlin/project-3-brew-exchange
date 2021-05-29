@@ -34,7 +34,7 @@ The User Experience for this site was planned & developed using the [5 Planes of
 ### Structure
 #### Flowchart
 - Flowchart created using [Lucidchart](https://www.lucidchart.com):<br>
-    [Flowchart PNG](/readme-assets/brew-exchange-flowchart.png)
+    [Flowchart PNG](/readme-assets/images/brew-exchange-flowchart.png)
 
 #### Wireframes
 - Wireframes created using [Balsamiq](https://balsamiq.com/):<br>
@@ -42,7 +42,8 @@ The User Experience for this site was planned & developed using the [5 Planes of
 
 ### Design
 
-- Colour Scheme:
+- Color Scheme chosen using [Coolors.co](https://coolors.co/). This palette was chosen to provide colors that tie in with the coffee theme of the site, and provide complimentary colors that offer sufficient contrasts to work with:<br>
+    <img src="readme-assets/images/brew-exchange-palette.png" alt="color palette" width="400"/>
 
 - Typography:
 
