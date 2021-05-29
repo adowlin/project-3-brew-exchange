@@ -44,7 +44,7 @@ The User Experience for this site was planned & developed using the [5 Planes of
 
 - Color Scheme:
     - Chosen using [coolors.co](https://coolors.co/). This palette was chosen to provide colors that tie in with the coffee theme of the site, and provide complimentary colors that offer sufficient contrasts to work with:<br>
-    <img src="readme-assets/images/brew-exchange-palette.png" alt="color palette" width="400"/>
+    [<img src="readme-assets/images/brew-exchange-palette.png" alt="color palette" width="400"/>](https://coolors.co/eff2f1-880d1e-c4926e-57a773-3a3238)
 
 - Typography:
     - The [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) font was chosen for the site's headers, and [Poppins](https://fonts.google.com/specimen/Poppins) was chosen for the site's main text.
