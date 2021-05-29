@@ -32,6 +32,13 @@ The User Experience for this site was planned & developed using the [5 Planes of
     - Delete brew method categories.
 
 ### Structure
+#### Flowchart
+- Flowchart created using [Lucidchart](https://www.lucidchart.com):<br>
+    [Flowchart PNG](/readme-assets/brew-exchange-flowchart.png)
+
+#### Wireframes
+- Wireframes created using [Balsamiq](https://balsamiq.com/):<br>
+    [Wireframes PDF](/readme-assets/brew-exchange-wireframes.pdf)
 
 ### Design
 
