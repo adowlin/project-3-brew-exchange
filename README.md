@@ -46,6 +46,7 @@ The User Experience for this site was planned & developed using the [5 Planes of
     <img src="readme-assets/images/brew-exchange-palette.png" alt="color palette" width="400"/>
 
 - Typography:
+    - The [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) font was chosen for the site's headers, and [Poppins](https://fonts.google.com/specimen/Poppins) was chosen for the site's main text.
 
 - Images:
 
