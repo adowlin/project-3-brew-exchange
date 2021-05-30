@@ -73,7 +73,7 @@ header .sidenav li>a>i {
 
 #hero-card {
     background-color: rgb(196, 146, 110, 0.85); 
-    margin-top: 30vh;
+    margin-top: 20vh;
     text-align: center;
 }
 
@@ -93,6 +93,13 @@ header .sidenav li>a>i {
     font-family: 'Poppins', sans-serif;
     font-size: 1.25rem;
     font-weight: 300;
+}
+
+.cta-btn {
+    background-color: rgb(136, 13, 30);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    width: 100%;
 }
 
 /* Footer */
