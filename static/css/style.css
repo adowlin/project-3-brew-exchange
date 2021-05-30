@@ -46,6 +46,24 @@ header .sidenav li>a>i {
     margin-right: 1rem;
 }
 
+/* Hero Image */
+
+#hero-container {
+    margin:0;
+    padding: 0;
+    border: 0;
+}
+
+#hero-section {
+    min-height: 80vh;
+    min-width: 100vw;
+    background: url(/static/images/hero-img.jpg) no-repeat center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 /* Footer */
 
 .page-footer {

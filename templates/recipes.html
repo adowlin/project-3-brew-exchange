@@ -1,4 +1,11 @@
 {% extends "base.html" %}
+{% block hero %}
+    <div class="container row" id="hero-container">
+        <div class="col s12" id="hero-section">
+            
+        </div>
+    </div>
+{% endblock %}
 {% block content %}
     {% for recipe in recipes %}
         {{ recipe.recipe_method }}<br>
