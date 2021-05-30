@@ -13,6 +13,29 @@
     <title>Brew Exchange</title>
 </head>
 <body>
+
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo right">Logo</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                <ul class="left hide-on-med-and-down">
+                    <li><a href="#">All Recipes</a></li>
+                    <li><a href="#">Log In</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Categories</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="#">All Recipes</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Categories</a></li>
+        </ul>
+    </header>
+    
     {% block content %}
         
     {% endblock %}
