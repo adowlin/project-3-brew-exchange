@@ -19,7 +19,7 @@
         {% endblock %}
         <nav>
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo right">Brew Exchange</a>
+                <a href="{{ url_for('get_recipes') }}" class="brand-logo right">Brew Exchange</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="left hide-on-med-and-down">
                     <li><a href="{{ url_for('get_recipes') }}"><i class="fas fa-home"></i>All Recipes</a></li>
@@ -33,7 +33,7 @@
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="#"><i class="fas fa-home"></i>All Recipes</a></li>
+            <li><a href="{{ url_for('get_recipes') }}"><i class="fas fa-home"></i>All Recipes</a></li>
             <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="#"><i class="fas fa-clipboard-list"></i>Categories</a></li>
             <li><a href="#"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
