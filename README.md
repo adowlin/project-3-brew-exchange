@@ -51,7 +51,7 @@ The User Experience for this site was planned & developed using the [5 Planes of
 
 - Images:
     - [Unsplash](https://unsplash.com/) was used to select the site's Hero Image<br>
-    [<img src="readme-assets/images/hero-img.jpg" alt="coffee beans with cup" width="400"/>](https://unsplash.com/photos/Y6O6PHJRQms?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
+    [<img src="static/images/hero-img.jpg" alt="coffee beans with cup" width="400"/>](https://unsplash.com/photos/Y6O6PHJRQms?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
 
 ## Features
 
