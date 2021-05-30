@@ -71,6 +71,30 @@ header .sidenav li>a>i {
     background-size: cover;
 }
 
+#hero-card {
+    background-color: rgb(196, 146, 110, 0.85); 
+    margin-top: 30vh;
+    text-align: center;
+}
+
+#hero-header {
+    color: rgb(58, 50, 56);
+    text-shadow: 0.2rem 0.2rem rgb(239, 242, 241, 0.25);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: -1rem;
+    padding: 1.5rem;
+}
+
+#hero-text {
+    color: rgb(58, 50, 56);
+    text-shadow: 0.1rem 0.1rem rgb(239, 242, 241, 0.25);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
 /* Footer */
 
 .page-footer {
