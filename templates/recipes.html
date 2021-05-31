@@ -29,13 +29,27 @@
     </div>
 {% endblock %}
 {% block content %}
-    {% for recipe in recipes %}
-        {{ recipe.recipe_method }}<br>
-        {{ recipe.roast_level }}<br>
-        {{ recipe.grind_size }}<br>
-        {{ recipe.coffee_weight }}<br>
-        {{ recipe.water_weight }}<br>
-        {{ recipe.time }}<br>
-        {{ recipe.description }}<br>
-    {% endfor %}
+    <ul class="collapsible">
+        {% for recipe in recipes %}
+        <li>
+            <div class="collapsible-header text-shadow">
+                <div class="col s3">
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="col s9">
+                    <strong>{{ recipe.recipe_method }}</strong><br>
+                    <em>{{ recipe.time }}</em>
+                </div>
+            </div>
+            <div class="collapsible-body">
+                <strong>Roast Level:</strong> {{ recipe.roast_level }}
+                <strong>Grind Size:</strong> {{ recipe.grind_size }}
+                <strong>Coffee Weight:</strong> {{ recipe.coffee_weight }}g
+                <strong>Water Weight:</strong> {{ recipe.water_weight }}g
+                <strong>Total Brew Time: </strong> {{ recipe.time }}
+                <p>{{ recipe.description }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
