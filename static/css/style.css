@@ -124,11 +124,27 @@ header .sidenav li>a>i {
 
 .collapsible {
     border: 0;
+    font-size: 1.2rem;
 }
 
 .collapsible-header {
     background-color: rgb(58, 50, 56);
+}
+
+.collapsible-body {
+    background-color: rgb(196, 146, 110, 0.75);
+    color: rgb(58, 50, 56);
+}
+
+.collapsible-body strong {
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: left;
+}
+
+.collapsible-body span,
+.collapsible-body p {
     font-size: 1rem;
+    font-weight: 300;
 }
 
 /* Footer */
