@@ -29,27 +29,29 @@
     </div>
 {% endblock %}
 {% block content %}
-    <ul class="collapsible">
-        {% for recipe in recipes %}
-        <li>
-            <div class="collapsible-header text-shadow">
-                <div class="col s3">
-                    <i class="fas fa-angle-down"></i>
+    <div class="row collapsable-wrapper">
+        <ul class="collapsible col s10 offset-s1 l8 offset-l2">
+            {% for recipe in recipes %}
+            <li>
+                <div class="collapsible-header text-shadow row">
+                    <div class="col s3">
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                    <div class="col s9">
+                        <strong>{{ recipe.recipe_method }}</strong><br>
+                        <em>{{ recipe.time }}</em>
+                    </div>
                 </div>
-                <div class="col s9">
-                    <strong>{{ recipe.recipe_method }}</strong><br>
-                    <em>{{ recipe.time }}</em>
+                <div class="collapsible-body">
+                    <strong>Roast Level:</strong> {{ recipe.roast_level }}
+                    <strong>Grind Size:</strong> {{ recipe.grind_size }}
+                    <strong>Coffee Weight:</strong> {{ recipe.coffee_weight }}g
+                    <strong>Water Weight:</strong> {{ recipe.water_weight }}g
+                    <strong>Total Brew Time: </strong> {{ recipe.time }}
+                    <p>{{ recipe.description }}</p>
                 </div>
-            </div>
-            <div class="collapsible-body">
-                <strong>Roast Level:</strong> {{ recipe.roast_level }}
-                <strong>Grind Size:</strong> {{ recipe.grind_size }}
-                <strong>Coffee Weight:</strong> {{ recipe.coffee_weight }}g
-                <strong>Water Weight:</strong> {{ recipe.water_weight }}g
-                <strong>Total Brew Time: </strong> {{ recipe.time }}
-                <p>{{ recipe.description }}</p>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
