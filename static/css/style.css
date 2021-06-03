@@ -69,6 +69,23 @@ header .sidenav li>a>i {
     margin-right: 1rem;
 }
 
+/* Buttons */
+
+.red-btn,
+.green-btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    width: 100%;
+}
+
+.red-btn {
+    background-color: rgb(136, 13, 30);
+}
+
+.green-btn {
+    background-color: rgb(87, 167, 115);
+}
+
 /* Hero Image */
 
 #hero-container {
@@ -111,13 +128,6 @@ header .sidenav li>a>i {
     font-family: 'Poppins', sans-serif;
     font-size: 1.25rem;
     font-weight: 300;
-}
-
-.red-btn {
-    background-color: rgb(136, 13, 30);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    width: 100%;
 }
 
 /* Recipes List */
