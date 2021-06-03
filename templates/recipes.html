@@ -9,17 +9,17 @@
                         <p id="hero-text">Browse & Share Coffee Brewing Recipes!</p>
                         <div class="row button-wrapper">
                             <div class="col s6 offset-s3">
-                                <a class="waves-effect waves-light btn cta-btn">Search Recipes</a>
+                                <a class="waves-effect waves-light btn red-btn">Search Recipes</a>
                             </div>
                         </div>
                         <div class="row button-wrapper">
                             <div class="col s6 offset-s3">
-                                <a class="waves-effect waves-light btn cta-btn">Log In</a>
+                                <a class="waves-effect waves-light btn red-btn">Log In</a>
                             </div>
                         </div>
                         <div class="row button-wrapper">
                             <div class="col s6 offset-s3">
-                                <a class="waves-effect waves-light btn cta-btn">Register</a>
+                                <a class="waves-effect waves-light btn red-btn">Register</a>
                             </div>
                         </div>
                     </div>
@@ -29,6 +29,23 @@
     </div>
 {% endblock %}
 {% block content %}
+    <div class="row card-panel search-wrapper">
+        <form action="#" method="POST" class="col s12">
+            <div class="row input-field">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="fas fa-search"></i></label>
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="row btn-wrapper">
+                <button type="submit" class="col s3 offset-s2 btn green-btn text-shadow">
+                    <i class="fas fa-search"></i> Search
+                </button>
+                <a href="{{ url_for('get_recipes') }}" class="col s3 offset-s2 waves-effect waves-light btn red-btn text-shadow">
+                    <i class="far fa-times-circle"></i> Reset
+                </a>
+            </div>
+        </form>
+    </div>
     <div class="row collapsable-wrapper">
         <ul class="collapsible col s10 offset-s1 l8 offset-l2">
             {% for recipe in recipes %}
