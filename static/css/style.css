@@ -130,8 +130,16 @@ header .sidenav li>a>i {
     font-weight: 300;
 }
 
-/* Recipes Search Bar */
+/* ----------------- Recipes Section */
 
+/* Recipes Header & Search */
+
+h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+}
+
+h2,
 .input-field>.fa-search {
     color: rgb(58, 50, 56);
 }
