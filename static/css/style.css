@@ -130,6 +130,12 @@ header .sidenav li>a>i {
     font-weight: 300;
 }
 
+/* Recipes Search Bar */
+
+.input-field>.fa-search {
+    color: rgb(58, 50, 56);
+}
+
 /* Recipes List */
 
 .collapsible {
