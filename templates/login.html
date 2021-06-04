@@ -1,12 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
-    {% for recipe in recipes %}
-        {{ recipe.recipe_method }}<br>
-        {{ recipe.roast_level }}<br>
-        {{ recipe.grind_size }}<br>
-        {{ recipe.coffee_weight }}<br>
-        {{ recipe.water_weight }}<br>
-        {{ recipe.time }}<br>
-        {{ recipe.description }}<br>
-    {% endfor %}
+    <h2 class="center-align">Log In</h2>
+    <div class="row">
+        <div class="col s12">
+            <p class="center-align auth-text">
+                Don't have an account? 
+                <a href="#">Register Here</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="row register-form">
+        <form action="{{ url_for('login') }}" method="POST" class="col s12 m8 offset-m2">
+            <div class="card-panel">
+                <!-- Username -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-plus prefix"></i>
+                        <input type="text" id="username" name="username" minlenth="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <!-- Password -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-lock prefix"></i>
+                        <input type="password" id="password" name="password" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <!-- Register Button -->
+                <div class="row">
+                    <button type="submit" class="col s8 offset-s2 btn-large text-shadow green-btn">
+                        <i class="fas fa-sign-in-alt"></i> Log In
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
 {% endblock %}
