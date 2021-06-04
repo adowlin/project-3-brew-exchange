@@ -33,8 +33,8 @@ def search():
     return render_template("recipes.html", recipes=recipes)
 
 
-# Authentication functionality for Register, Login, Profile adapted from
-#  Code Institute Flask Mini Project coursework:
+# Authentication functionality for Register, Login, Logout, Profile adapted
+# from Code Institute Flask Mini Project coursework:
 # https://github.com/adowlin/flask-task-manager/blob/master/app.py
 
 @app.route("/register", methods=["GET", "POST"])
@@ -99,6 +99,14 @@ def profile(username):
     if session["user"]:
         return render_template("profile.html", username=username)
 
+    return redirect(url_for("login"))
+
+
+@app.route("/logout")
+def logout():
+    # Remove user from session cookies
+    flash("You have been logged out.")
+    session.pop("user")
     return redirect(url_for("login"))
 
 

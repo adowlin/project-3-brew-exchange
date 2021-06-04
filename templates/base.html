@@ -25,7 +25,7 @@
                     <li><a href="{{ url_for('get_recipes') }}"><i class="fas fa-home"></i>All Recipes</a></li>
                     {% if session.user %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user"></i>Profile</a></li>
-                        <li><a href="#"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
+                        <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
                         <li><a href="#"><i class="fas fa-clipboard-list"></i>Categories</a></li>
                     {% else %}
                         <li><a href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i>Log In</a></li>
@@ -39,7 +39,7 @@
             <li><a href="{{ url_for('get_recipes') }}"><i class="fas fa-home"></i>All Recipes</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user"></i>Profile</a></li>
-                <li><a href="#"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
+                <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
                 <li><a href="#"><i class="fas fa-clipboard-list"></i>Categories</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i>Log In</a></li>
