@@ -33,20 +33,20 @@
     <h2 class="center-align">Search Recipes</h2>
 
     <div class="row card-panel search-wrapper">
-        <form action="#" method="POST" class="col s12">
+        <form action="{{ url_for('search') }}" method="POST" class="col s12">
             <div class="row valign-wrapper center-align">
-                <div class="col s12 input-field">
+                <div class="input-field col s12">
                     <i class="fas fa-search prefix"></i>
-                    <input name="query" id="query" minlength="2" class="validate" type="text" required>
-                    <label class="label-icon" for="query">Search Recipes</label>
+                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                    <label for="query">Search Recipes</label>
                 </div>
             </div>
-            <div class="row btn-wrapper">
-                <button type="submit" class="col s3 offset-s2 btn green-btn text-shadow">
+            <div class="row">
+                <button type="submit" class="green-btn btn text-shadow col s3 offset-s2">
                     <i class="fas fa-search"></i> Search
                 </button>
-                <a href="{{ url_for('get_recipes') }}" class="col s3 offset-s2 waves-effect waves-light btn red-btn text-shadow">
-                    <i class="far fa-times-circle"></i> Reset
+                <a href="{{ url_for('get_recipes') }}" class="red-btn btn text-shadow col s3 offset-s2">
+                    <i class="far fa-times-circle"></i> Clear/Reset
                 </a>
             </div>
         </form>
