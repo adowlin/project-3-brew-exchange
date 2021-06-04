@@ -7,8 +7,8 @@
             <!-- Brew Method -->
             <div class="row">
                 <div class="input-field col s12">
-                    <select name="brew_method" id="brew-method" class="validate" required>
-                        <option value="" disabled selection>Choose a Brew Method</option>
+                    <select name="brew_method" id="brew_method" class="validate" required>
+                        <option value="" disabled selected>Choose a Brew Method</option>
                         {% for brew_method in brew_methods %}
                             <option value="{{ brew_method.method_name }}">{{ brew_method.method_name }}</option>
                         {% endfor %}
@@ -18,6 +18,17 @@
             </div>
 
             <!-- Roast Level -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <select name="roast_level" id="roast_level" class="validate" required>
+                        <option value="" disabled selected>Choose a Roast Level</option>
+                        {% for roast in roast_levels %}
+                            <option value="{{ roast }}">{{ roast }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="roast_level">Roast Level</label>
+                </div>
+            </div>
 
             <!-- Grind Size -->
 
