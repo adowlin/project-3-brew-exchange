@@ -22,6 +22,7 @@
                     <strong>Water Weight:</strong> <span>{{ recipe.water_weight }}g</span><br>
                     <strong>Total Brew Time: </strong> <span>{{ recipe.time }}</span><br>
                     <p>{{ recipe.description }}</p>
+                    <span class="right user-display"><strong>Added By:</strong> {{ recipe.user }}</span>
                 </div>
             </li>
             {% endfor %}

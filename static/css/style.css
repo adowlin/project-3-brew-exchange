@@ -179,6 +179,10 @@ h2,
     font-weight: 300;
 }
 
+.user-display {
+    font-style: italic;
+}
+
 /* Register */
 
 .auth-text {
