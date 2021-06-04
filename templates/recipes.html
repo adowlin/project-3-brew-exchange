@@ -9,7 +9,7 @@
                         <p id="hero-text">Browse & Share Coffee Brewing Recipes!</p>
                         <div class="row button-wrapper">
                             <div class="col s6 offset-s3">
-                                <a class="waves-effect waves-light btn red-btn">Search Recipes</a>
+                                <a href="#search-header" class="waves-effect waves-light btn red-btn">Search Recipes</a>
                             </div>
                         </div>
                         <div class="row button-wrapper">
@@ -30,7 +30,7 @@
 {% endblock %}
 {% block content %}
 
-    <h2 class="center-align">Search Recipes</h2>
+    <h2 id="search-header" class="center-align">Search Recipes</h2>
 
     <div class="row card-panel search-wrapper">
         <form action="{{ url_for('search') }}" method="POST" class="col s12">
