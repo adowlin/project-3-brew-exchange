@@ -2,6 +2,12 @@
 {% block content %}
     <h2 class="center-align">Your Recipes</h2>
 
+    <div class="row">
+        <a href="#" class="green-btn btn text-shadow col s3 right">
+            <i class="fas fa-plus"></i> <span>New Recipe</span>
+        </a>
+    </div>
+
     <div class="row collapsable-wrapper">
         <ul class="collapsible">
             {% for recipe in recipes %}
