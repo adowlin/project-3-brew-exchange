@@ -1,7 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
     <h2 class="center-align">Register</h2>
-    <p class="center-align">Already Registered? <a href="#">Log In Here</a></p>
+    <div class="row">
+        <div class="col s12">
+            <p class="center-align">
+                Already Registered? 
+                <a href="#">Log In Here</a>
+            </p>
+        </div>
+    </div>
 
     <div class="row register-form-wrapper">
         <form action="{{ url_for('register') }}" method="POST" class="col s12 m8 offset-m2">
@@ -23,6 +30,12 @@
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="password">Password</label>
                     </div>
+                </div>
+                <!-- Register Button -->
+                <div class="row">
+                    <button type="submit" class="col s12 btn-large text-shadow green-btn">
+                        <i class="fas fa-sign-in-alt"></i> Register
+                    </button>
                 </div>
             </div>
         </form>
