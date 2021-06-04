@@ -171,6 +171,19 @@ h2,
     font-weight: 300;
 }
 
+/* Register */
+
+.auth-text {
+    font-size: 1rem;
+    font-style: italic;
+    margin-top: -0.75rem;
+    color:rgb(58, 50, 56, 0.75);
+}
+
+.register-form {
+    color:rgb(58, 50, 56);
+}
+
 /* Footer */
 
 .page-footer {
