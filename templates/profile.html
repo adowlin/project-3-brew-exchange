@@ -1,12 +1,4 @@
 {% extends "base.html" %}
 {% block content %}
-    {% for recipe in recipes %}
-        {{ recipe.recipe_method }}<br>
-        {{ recipe.roast_level }}<br>
-        {{ recipe.grind_size }}<br>
-        {{ recipe.coffee_weight }}<br>
-        {{ recipe.water_weight }}<br>
-        {{ recipe.time }}<br>
-        {{ recipe.description }}<br>
-    {% endfor %}
+    <h2 class="center-align">Your Recipes</h2>
 {% endblock %}
