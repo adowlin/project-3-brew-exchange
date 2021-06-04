@@ -3,5 +3,28 @@
     <h2 class="center-align">Register</h2>
     <p class="center-align">Already Registered? <a href="#">Log In Here</a></p>
 
-
+    <div class="row register-form-wrapper">
+        <form action="{{ url_for('register') }}" method="POST" class="col s12 m8 offset-m2">
+            <div class="card-panel">
+                <!-- Username -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-plus prefix"></i>
+                        <input type="text" id="username" name="username" minlenth="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <!-- Password -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-lock prefix"></i>
+                        <input type="password" id="password" name="password" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 {% endblock %}
