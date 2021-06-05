@@ -10,30 +10,32 @@
 
     <div class="row cards-wrapper">
         {% for recipe in recipes %}
-            <div class="col s12 m5 cards">
-                <div class="card medium">
-                    <div class="card-content">
-                        <span class="card-title">
-                            <strong>{{ recipe.recipe_method }}</strong><br>
-                            <em>{{ recipe.time_mins }}:{{ recipe.time_secs }} mins</em>
-                        </span>
-                        <p>
-                            <strong>Roast Level:</strong> <span>{{ recipe.roast_level }}</span><br>
-                            <strong>Grind Size:</strong> <span>{{ recipe.grind_size }}</span><br>
-                            <strong>Coffee Weight:</strong> <span>{{ recipe.coffee_weight }}g</span><br>
-                            <strong>Water Weight:</strong> <span>{{ recipe.water_weight }}g</span><br>
-                            <strong>Total Brew Time: </strong> <span>{{ recipe.time_mins }}:{{ recipe.time_secs }} mins</span><br><br>
-                            <p>{{ recipe.description }}</p><br>
-                            <span class="right user-display"><strong>Added By:</strong> {{ recipe.user }}</span>
-                        </p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#" class="green-btn btn text-shadow col s3 offset-s2">
-                            <i class="far fa-edit"></i> Edit
-                        </a>
-                        <a href="#" class="red-btn btn text-shadow col s3 offset-s2">
-                            <i class="far fa-trash-alt"></i> Delete
-                        </a>
+            <div class="col s12 m6 cards">
+                <div class="card-wrapper">
+                    <div class="card medium">
+                        <div class="card-content">
+                            <span class="card-title">
+                                <strong>{{ recipe.recipe_method }}</strong><br>
+                                <em>{{ recipe.time_mins }}:{{ recipe.time_secs }} mins</em>
+                            </span>
+                            <p>
+                                <strong>Roast Level:</strong> <span>{{ recipe.roast_level }}</span><br>
+                                <strong>Grind Size:</strong> <span>{{ recipe.grind_size }}</span><br>
+                                <strong>Coffee Weight:</strong> <span>{{ recipe.coffee_weight }}g</span><br>
+                                <strong>Water Weight:</strong> <span>{{ recipe.water_weight }}g</span><br>
+                                <strong>Total Brew Time: </strong> <span>{{ recipe.time_mins }}:{{ recipe.time_secs }} mins</span><br><br>
+                                <p>{{ recipe.description }}</p><br>
+                                <span class="right user-display"><strong>Added By:</strong> {{ recipe.user }}</span>
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" class="green-btn btn text-shadow col s3 offset-s2">
+                                <i class="far fa-edit"></i> Edit
+                            </a>
+                            <a href="#" class="red-btn btn text-shadow col s3 offset-s2">
+                                <i class="far fa-trash-alt"></i> Delete
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

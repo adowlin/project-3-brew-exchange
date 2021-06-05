@@ -174,12 +174,14 @@ h2,
     font-weight: 300;
 }*/
 
+.card-wrapper {
+    padding: 1rem;
+}
+
 .card {
     background-color: rgb(196, 146, 110, 0.75);
     color: rgb(58, 50, 56);
     font-size: 0.9rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
 }
 
 .card-title,
