@@ -52,30 +52,31 @@
         </form>
     </div>
 
-    <div class="row collapsable-wrapper">
-        <ul class="collapsible">
-            {% for recipe in recipes %}
-            <li>
-                <div class="collapsible-header text-shadow">
-                    <div class="col s2 m1 offset-m1">
-                        <i class="fas fa-angle-down"></i>
-                    </div>
-                    <div class="col s10">
+    <div class="row cards-wrapper">
+        {% for recipe in recipes %}
+        <div class="col s12 m6">
+            <div class="card medium blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">
                         <strong>{{ recipe.recipe_method }}</strong><br>
                         <em>{{ recipe.time_mins }}:{{ recipe.time_secs }} mins</em>
-                    </div>
+                    </span>
+                    <p>
+                        <strong>Roast Level:</strong> <span>{{ recipe.roast_level }}</span><br>
+                        <strong>Grind Size:</strong> <span>{{ recipe.grind_size }}</span><br>
+                        <strong>Coffee Weight:</strong> <span>{{ recipe.coffee_weight }}g</span><br>
+                        <strong>Water Weight:</strong> <span>{{ recipe.water_weight }}g</span><br>
+                        <strong>Total Brew Time: </strong> <span>{{ recipe.time_mins }}:{{ recipe.time_secs }} mins</span><br>
+                        <p>{{ recipe.description }}</p>
+                        <span class="right user-display"><strong>Added By:</strong> {{ recipe.user }}</span>
+                    </p>
                 </div>
-                <div class="collapsible-body">
-                    <strong>Roast Level:</strong> <span>{{ recipe.roast_level }}</span><br>
-                    <strong>Grind Size:</strong> <span>{{ recipe.grind_size }}</span><br>
-                    <strong>Coffee Weight:</strong> <span>{{ recipe.coffee_weight }}g</span><br>
-                    <strong>Water Weight:</strong> <span>{{ recipe.water_weight }}g</span><br>
-                    <strong>Total Brew Time: </strong> <span>{{ recipe.time_mins }}:{{ recipe.time_secs }} mins</span><br>
-                    <p>{{ recipe.description }}</p>
-                    <span class="right user-display"><strong>Added By:</strong> {{ recipe.user }}</span>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
                 </div>
-            </li>
-            {% endfor %}
-        </ul>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 {% endblock %}
