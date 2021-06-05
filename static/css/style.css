@@ -94,6 +94,16 @@ header .sidenav li>a>i {
     background-color: rgb(87, 167, 115);
 }
 
+.edit-btn {
+    color:rgb(87, 167, 115);
+    text-shadow: 0.1rem 0.1rem rgb(239, 242, 241, 0.5);
+}
+
+.delete-btn {
+    color: rgb(136, 13, 30);
+    text-shadow: 0.1rem 0.1rem rgb(239, 242, 241, 0.5);
+}
+
 /* Hero Image */
 
 #hero-container {
@@ -152,27 +162,7 @@ h2,
     color: rgb(58, 50, 56);
 }
 
-/* Recipes List */
-
-/* .cards-wrapper {
-    border: 0;
-    font-size: 1.2rem;
-}
-
-.card-title {
-    background-color: rgb(58, 50, 56);
-}
-
-.card-content>p strong {
-    font-family: 'Space Grotesk', sans-serif;
-    text-align: left;
-}
-
-.card-content>p span,
-.card-content>p p {
-    font-size: 1rem;
-    font-weight: 300;
-}*/
+/* Recipe Cards */
 
 .card-wrapper {
     padding: 1rem;
@@ -187,6 +177,12 @@ h2,
 .card-title,
 .card strong {
     font-family: 'Space Grotesk', sans-serif;
+}
+
+.card-title hr {
+    background-color: rgb(58, 50, 56, 0.3);
+    height: 0.05rem;
+    border: 0;
 }
 
 .card-body {
