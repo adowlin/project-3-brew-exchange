@@ -61,6 +61,16 @@
                     <label for="description">Description</label>
                 </div>
             </div>
+
+            <!-- Buttons -->
+            <div class="row">
+                <button type="submit" class="green-btn btn text-shadow col s3 offset-s2">
+                    <i class="far fa-save"></i> Save
+                </button>
+                <a href="{{ url_for('profile', username=session['user']) }}" class="red-btn btn text-shadow col s3 offset-s2">
+                    <i class="far fa-times-circle"></i> Cancel
+                </a>
+            </div>
         </form>
     </div>
 {% endblock %}
