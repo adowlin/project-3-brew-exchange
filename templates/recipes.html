@@ -71,10 +71,16 @@
                         <span class="right user-display"><strong>Added By:</strong> {{ recipe.user }}</span>
                     </p>
                 </div>
-                <div class="card-action">
-                    <a href="#">This is a link</a>
-                    <a href="#">This is a link</a>
-                </div>
+                {% if session["user"] == recipe.user %}
+                    <div class="card-action">
+                        <a href="#" class="green-btn btn text-shadow col s3 offset-s2">
+                            <i class="far fa-edit"></i> Edit
+                        </a>
+                        <a href="#" class="red-btn btn text-shadow col s3 offset-s2">
+                            <i class="far fa-trash-alt"></i> Delete
+                        </a>
+                    </div>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
