@@ -179,6 +179,10 @@ h2,
     font-family: 'Space Grotesk', sans-serif;
 }
 
+.recipe-time-head {
+    font-size: 1.25rem;
+}
+
 .card-title hr {
     background-color: rgb(58, 50, 56, 0.3);
     height: 0.05rem;
