@@ -154,33 +154,47 @@ h2,
 
 /* Recipes List */
 
-.collapsible {
+/* .cards-wrapper {
     border: 0;
     font-size: 1.2rem;
 }
 
-.collapsible-header {
+.card-title {
     background-color: rgb(58, 50, 56);
 }
 
-.collapsible-body {
-    background-color: rgb(196, 146, 110, 0.75);
-    color: rgb(58, 50, 56);
-}
-
-.collapsible-body strong {
+.card-content>p strong {
     font-family: 'Space Grotesk', sans-serif;
     text-align: left;
 }
 
-.collapsible-body span,
-.collapsible-body p {
+.card-content>p span,
+.card-content>p p {
     font-size: 1rem;
+    font-weight: 300;
+}*/
+
+.card {
+    background-color: rgb(196, 146, 110, 0.75);
+    color: rgb(58, 50, 56);
+    font-size: 0.9rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.card-title,
+.card strong {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.card-body {
+    font-size: 1.1rem;
     font-weight: 300;
 }
 
 .user-display {
     font-style: italic;
+    color: rgb(58, 50, 56, 0.75);
 }
 
 /* Register */
