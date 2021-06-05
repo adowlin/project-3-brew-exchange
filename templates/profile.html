@@ -18,7 +18,7 @@
                     </div>
                     <div class="col s10">
                         <strong>{{ recipe.recipe_method }}</strong><br>
-                        <em>{{ recipe.time }}</em>
+                        <em>{{ recipe.time_mins }}:{{ recipe.time_secs }} mins</em>
                     </div>
                 </div>
                 <div class="collapsible-body">
@@ -26,7 +26,7 @@
                     <strong>Grind Size:</strong> <span>{{ recipe.grind_size }}</span><br>
                     <strong>Coffee Weight:</strong> <span>{{ recipe.coffee_weight }}g</span><br>
                     <strong>Water Weight:</strong> <span>{{ recipe.water_weight }}g</span><br>
-                    <strong>Total Brew Time: </strong> <span>{{ recipe.time }}</span><br>
+                    <strong>Total Brew Time: </strong> <span>{{ recipe.time_mins }}:{{ recipe.time_secs }} mins</span><br>
                     <p>{{ recipe.description }}</p>
                     <span class="right user-display"><strong>Added By:</strong> {{ recipe.user }}</span>
                 </div>

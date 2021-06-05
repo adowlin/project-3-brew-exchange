@@ -122,7 +122,8 @@ def add_recipe():
             "grind_size": request.form.get("grind_size"),
             "coffee_weight": request.form.get("coffee_weight"),
             "water_weight": request.form.get("water_weight"),
-            "time": request.form.get("brew_time"),
+            "time_mins": request.form.get("time_mins"),
+            "time_secs": request.form.get("time_secs"),
             "description": request.form.get("description"),
             "user": session["user"]
         }
