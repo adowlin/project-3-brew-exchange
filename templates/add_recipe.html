@@ -7,6 +7,7 @@
             <!-- Brew Method -->
             <div class="row">
                 <div class="input-field col s12">
+                    <i class="fas fa-coffee prefix"></i>
                     <select name="brew_method" id="brew_method" class="validate" required>
                         <option value="" disabled selected>Choose a Brew Method</option>
                         {% for brew_method in brew_methods %}
@@ -20,6 +21,7 @@
             <!-- Roast Level -->
             <div class="row">
                 <div class="input-field col s12">
+                    <i class="fas fa-signal prefix"></i>
                     <select name="roast_level" id="roast_level" class="validate" required>
                         <option value="" disabled selected>Choose a Roast Level</option>
                         {% for roast in roast_levels %}
@@ -32,32 +34,32 @@
 
             <!-- Grind Size -->
             <div class="input-field col s12">
+                <i class="fas fa-mortar-pestle prefix"></i>
                 <input id="grind_size" type="text" class="validate">
                 <label for="grind_size">Grind Size</label>
             </div>
 
             <!-- Coffee Weight -->
             <div class="input-field col s12">
+                <i class="fas fa-weight prefix"></i>
                 <input id="coffee_weight" type="text" class="validate">
                 <label for="coffee_weight">Coffee Weight (in grams)</label>
             </div>
 
             <!-- Water Weight -->
             <div class="input-field col s12">
+                <i class="fas fa-tint prefix"></i>
                 <input id="water_weight" type="text" class="validate">
                 <label for="water_weight">Water Weight (in millilitres)</label>
             </div>
 
             <!-- Description -->
             <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <textarea id="description" class="materialize-textarea"></textarea>
-                            <label for="description">Description</label>
-                        </div>
-                    </div>
-                </form>
+                <div class="input-field col s12">
+                    <i class="far fa-sticky-note prefix"></i>
+                    <textarea id="description" class="materialize-textarea"></textarea>
+                    <label for="description">Description</label>
+                </div>
             </div>
         </form>
     </div>
