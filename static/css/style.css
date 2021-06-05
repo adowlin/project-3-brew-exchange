@@ -198,6 +198,12 @@ h2,
 
 /* Profile */
 
+/* Add/Edit Recipe */
+
+.recipe-form {
+    color: rgb(58, 50, 56);
+}
+
 /* Footer */
 
 .page-footer {
