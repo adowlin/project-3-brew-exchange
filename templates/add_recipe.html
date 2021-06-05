@@ -33,30 +33,37 @@
             </div>
 
             <!-- Grind Size -->
-            <div class="input-field col s12 m10 offset-m1">
-                <i class="fas fa-mortar-pestle prefix"></i>
-                <input id="grind_size" type="text" class="validate">
-                <label for="grind_size">Grind Size</label>
+            <div class="row">
+                <div class="input-field col s12 m10 offset-m1">
+                    <i class="fas fa-mortar-pestle prefix"></i>
+                    <select name="grind_size" id="grind_size" class="validate" required>
+                        <option value="" disabled selected>Choose a Grind Size</option>
+                        {% for grind in grind_sizes %}
+                            <option value="{{ grind }}">{{ grind }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="grind_size">Grind Size</label>
+                </div>
             </div>
 
             <!-- Coffee Weight -->
             <div class="input-field col s12 m10 offset-m1">
                 <i class="fas fa-weight prefix"></i>
-                <input id="coffee_weight" type="text" class="validate">
+                <input id="coffee_weight" name="coffee_weight" type="number" step="0.1" minlength=1 maxlength=10 class="validate" required>
                 <label for="coffee_weight">Coffee Weight (in grams)</label>
             </div>
 
             <!-- Water Weight -->
             <div class="input-field col s12 m10 offset-m1">
                 <i class="fas fa-tint prefix"></i>
-                <input id="water_weight" type="text" class="validate">
+                <input id="water_weight" name="water_weight" type="number" step="0.1" minlength=1 maxlength=10 type="text" class="validate" required>
                 <label for="water_weight">Water Weight (in millilitres)</label>
             </div>
 
             <!-- Brew Time -->
             <div class="input-field col s12 m10 offset-m1">
                 <i class="far fa-clock prefix"></i>
-                <input id="brew_time" type="text" class="validate">
+                <input id="brew_time" name="brew_time" type="text" class="validate" required>
                 <label for="brew_time">Brew Time</label>
             </div>
 
@@ -64,7 +71,7 @@
             <div class="row">
                 <div class="input-field col s12 m10 offset-m1">
                     <i class="far fa-sticky-note prefix"></i>
-                    <textarea id="description" class="materialize-textarea"></textarea>
+                    <textarea id="description" name="description" minlength=1 maxlength=100 class="materialize-textarea" required></textarea>
                     <label for="description">Description</label>
                 </div>
             </div>

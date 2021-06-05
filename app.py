@@ -133,8 +133,12 @@ def add_recipe():
     brew_methods = mongo.db.brew_methods.find().sort("method_name", 1)
     roast_levels = [
         "Light", "Light-Medium", "Medium", "Medium-Dark", "Dark", "French"]
+    grind_sizes = [
+        "Fine", "Fine-Medium", "Medium", "Medium-Coarse", "Coarse"
+    ]
     return render_template(
-        "add_recipe.html", brew_methods=brew_methods, roast_levels=roast_levels
+        "add_recipe.html", brew_methods=brew_methods,
+        roast_levels=roast_levels, grind_sizes=grind_sizes
         )
 
 
