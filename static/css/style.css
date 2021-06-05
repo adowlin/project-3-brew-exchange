@@ -220,6 +220,29 @@ h2,
     color: rgb(58, 50, 56);
 }
 
+/* Modals */
+
+.modal {
+    background-color: rgb(136, 13, 30, 0.9);
+    color: rgb(239, 242, 241);
+    text-shadow: 0.1rem 0.1rem rgb(58, 50, 56, 0.5);
+}
+
+.del-text,
+.cancel-text {
+    text-shadow: none;
+    font-size: 1.5rem;
+}
+
+.del-text {
+    font-weight: 600;
+    color: rgb(136, 13, 30);
+}
+
+.cancel-text {
+    color: rgb(58, 50, 56);
+}
+
 /* Footer */
 
 .page-footer {
