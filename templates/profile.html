@@ -14,9 +14,20 @@
                 <div class="card-wrapper">
                     <div class="card medium">
                         <div class="card-content">
-                            <span class="card-title">
-                                <strong>{{ recipe.recipe_method }}</strong><br>
-                                <em>{{ recipe.time_mins }}:{{ recipe.time_secs }} mins</em>
+                            <span class="card-title row">
+                                <div class="col s6 offset-s1">
+                                    <strong>{{ recipe.recipe_method }}</strong><br>
+                                    <em>{{ recipe.time_mins }}:{{ recipe.time_secs }} mins</em>
+                                </div>
+                                {% if session["user"] == recipe.user %}
+                                    <a href="#" class="text-shadow col s2 offset-s1">
+                                        <i class="far fa-edit"></i>
+                                    </a>
+                                    <a href="#" class="text-shadow col s2">
+                                        <i class="far fa-trash-alt"></i>
+                                    </a>
+                                {% endif %}
+                                <hr class="col s12">
                             </span>
                             <p>
                                 <strong>Roast Level:</strong> <span>{{ recipe.roast_level }}</span><br>
@@ -27,14 +38,6 @@
                                 <p>{{ recipe.description }}</p><br>
                                 <span class="right user-display"><strong>Added By:</strong> {{ recipe.user }}</span>
                             </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#" class="green-btn btn text-shadow col s3 offset-s2">
-                                <i class="far fa-edit"></i> Edit
-                            </a>
-                            <a href="#" class="red-btn btn text-shadow col s3 offset-s2">
-                                <i class="far fa-trash-alt"></i> Delete
-                            </a>
                         </div>
                     </div>
                 </div>
