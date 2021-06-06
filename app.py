@@ -187,6 +187,11 @@ def brew_methods():
     return render_template("brew_methods.html", brew_methods=brew_methods)
 
 
+@app.route("/add_brew_method", methods=["GET", "POST"])
+def add_brew_method():
+    return render_template("add_brew_method.html")
+
+
 @app.route("/delete_brew_method/<brew_method_id>", methods=["GET", "POST"])
 def delete_brew_method(brew_method_id):
     mongo.db.brew_methods.remove({"_id": ObjectId(brew_method_id)})
