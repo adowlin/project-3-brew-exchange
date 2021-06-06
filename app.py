@@ -145,7 +145,33 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    return render_template("edit_recipe.html")
+    if request.method == "POST":
+        update_recipe = {
+            "recipe_method": request.form.get("brew_method"),
+            "roast_level": request.form.get("roast_level"),
+            "grind_size": request.form.get("grind_size"),
+            "coffee_weight": request.form.get("coffee_weight"),
+            "water_weight": request.form.get("water_weight"),
+            "time_mins": request.form.get("time_mins"),
+            "time_secs": request.form.get("time_secs"),
+            "description": request.form.get("description"),
+            "user": session["user"]
+        }
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, update_recipe)
+        flash("Recipe Has Been Updated!")
+
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    brew_methods = mongo.db.brew_methods.find().sort("method_name", 1)
+    roast_levels = [
+        "Light", "Light-Medium", "Medium", "Medium-Dark", "Dark", "French"]
+    grind_sizes = [
+        "Fine", "Fine-Medium", "Medium", "Medium-Coarse", "Coarse"
+    ]
+
+    return render_template(
+        "edit_recipe.html", recipe=recipe, brew_methods=brew_methods,
+        roast_levels=roast_levels, grind_sizes=grind_sizes
+        )
 
 
 @app.route("/delete/<recipe_id>", methods=["GET", "POST"])
