@@ -220,6 +220,25 @@ h2,
     color: rgb(58, 50, 56);
 }
 
+.form-card {
+    background-color: rgb(196, 146, 110, 0.75);
+}
+
+.input-field>label {
+    color: rgb(58, 50, 56, 0.75);
+}
+
+.select-wrapper input.select-dropdown,
+.input-field>#username,
+.input-field>#password,
+.input-field>#coffee_weight,
+.input-field>#water_weight,
+.input-field>#time_mins,
+.input-field>#time_secs,
+.input-field>#description {
+    border-bottom: 1px solid rgb(58, 50, 56, 0.75);
+}
+
 /* Modals */
 
 .modal {

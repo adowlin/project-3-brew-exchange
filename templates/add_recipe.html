@@ -2,7 +2,7 @@
 {% block content %}
     <h2 class="center-align">Add New Recipe</h2>
 
-    <div class="row card-panel">
+    <div class="row card-panel form-card">
         <form action="{{ url_for('add_recipe') }}" method="POST" class="col s12 recipe-form">
             <!-- Brew Method -->
             <div class="row">
@@ -83,7 +83,7 @@
             <!-- Buttons -->
             <div class="row">
                 <button type="submit" class="green-btn btn text-shadow col s3 offset-s2">
-                    <i class="far fa-save"></i> Save
+                    <i class="far fa-save"></i><span class="hide-on-small-only"> Save</span>
                 </button>
                 <a href="{{ url_for('profile', username=session['user']) }}" class="red-btn btn text-shadow col s3 offset-s2">
                     <i class="far fa-times-circle"></i> Cancel
