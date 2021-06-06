@@ -26,7 +26,9 @@
                     {% if session.user %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user"></i>Profile</a></li>
                         <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
-                        <li><a href="#"><i class="fas fa-clipboard-list"></i>Categories</a></li>
+                        {% if session.user|lower == "admin"|lower %}
+                            <li><a href="{{ url_for('brew_methods') }}"><i class="fas fa-clipboard-list"></i>Manage Brew Methods</a></li>
+                        {% endif %}
                     {% else %}
                         <li><a href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i>Log In</a></li>
                         <li><a href="{{ url_for('register') }}"><i class="fas fa-marker"></i>Register</a></li>
@@ -40,7 +42,9 @@
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user"></i>Profile</a></li>
                 <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
-                <li><a href="#"><i class="fas fa-clipboard-list"></i>Categories</a></li>
+                {% if session.user|lower == "admin"|lower %}
+                    <li><a href="{{ url_for('brew_methods') }}"><i class="fas fa-clipboard-list"></i>Manage Brew Methods</a></li>
+                {% endif %}
             {% else %}
                 <li><a href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i>Log In</a></li>
                 <li><a href="{{ url_for('register') }}"><i class="fas fa-marker"></i>Register</a></li>

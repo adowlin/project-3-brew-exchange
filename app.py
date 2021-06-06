@@ -181,6 +181,12 @@ def delete_recipe(recipe_id):
     return redirect(request.referrer)
 
 
+@app.route("/brew_methods")
+def brew_methods():
+    brew_methods = mongo.db.brew_methods.find()
+    return render_template("brew_methods.html", brew_methods=brew_methods)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

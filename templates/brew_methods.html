@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+    {% for brew_method in brew_methods %}
+        {{ brew_method.method_name }}<br>
+    {% endfor %}
+{% endblock %}
