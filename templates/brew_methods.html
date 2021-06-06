@@ -9,9 +9,10 @@
                 <div class="card brew-method-card">
                     <div class="card-content row">
                         <span class="left-align col s6 offset-s2">{{ brew_method.method_name }}</span>
-                        <a href="#" class="modal-trigger text-shadow delete-btn col s2 offset-s1">
+                        <a href="#modal-{{ brew_method._id }}" class="modal-trigger text-shadow delete-btn col s2 offset-s1">
                             <i class="far fa-trash-alt"></i>
                         </a>
+                        {% include "components/modals.html" %}
                     </div>
                 </div>
             </div>

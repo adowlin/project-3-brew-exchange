@@ -1,12 +1,29 @@
 <!-- Confirm delete recipe action -->
-<div id="modal-{{ recipe._id }}" class="modal">
-    <div class="modal-content">
-        <h4>Delete Recipe</h4>
-        <p>Are you sure you want to permanently delete this recipe?</p>
+{% if recipe %}
+    <div id="modal-{{ recipe._id }}" class="modal">
+        <div class="modal-content">
+            <h4>Delete Recipe</h4>
+            <p>Are you sure you want to permanently delete this recipe?</p>
+        </div>
+        <div class="modal-footer">
+            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                class="del-text modal-close waves-effect waves-green btn-flat">Delete</a>
+            <a class="cancel-text waves-effect waves-green btn-flat modal-close">Cancel</a>
+        </div>
     </div>
-    <div class="modal-footer">
-        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
-            class="del-text modal-close waves-effect waves-green btn-flat">Delete</a>
-        <a class="cancel-text waves-effect waves-green btn-flat modal-close">Cancel</a>
+{% endif %}
+
+<!-- Confirm delete brew method action -->
+{% if brew_method %}
+    <div id="modal-{{ brew_method._id }}" class="modal">
+        <div class="modal-content">
+            <h4>Delete Brew Method</h4>
+            <p>Are you sure you want to permanently delete this Brew Method?</p>
+        </div>
+        <div class="modal-footer">
+            <a href="{{ url_for('delete_brew_method', brew_method_id=brew_method._id) }}"
+                class="del-text modal-close waves-effect waves-green btn-flat">Delete</a>
+            <a class="cancel-text waves-effect waves-green btn-flat modal-close">Cancel</a>
+        </div>
     </div>
-</div>
+{% endif %}

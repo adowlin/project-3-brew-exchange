@@ -187,6 +187,13 @@ def brew_methods():
     return render_template("brew_methods.html", brew_methods=brew_methods)
 
 
+@app.route("/delete_brew_method/<brew_method_id>", methods=["GET", "POST"])
+def delete_brew_method(brew_method_id):
+    mongo.db.brew_methods.remove({"_id": ObjectId(brew_method_id)})
+    flash("Brew Method Has Been Deleted!")
+    return redirect(request.referrer)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
