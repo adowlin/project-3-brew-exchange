@@ -9,9 +9,13 @@
                 <div class="input-field col s12 m10 offset-m1">
                     <i class="fas fa-coffee prefix"></i>
                     <select name="brew_method" id="brew_method" class="validate" required>
-                        <option value="" disabled selected>Choose a Brew Method</option>
+                        <option value="" disabled>Choose a Brew Method</option>
                         {% for brew_method in brew_methods %}
-                        <option value="{{ brew_method.method_name }}">{{ brew_method.method_name }}</option>
+                            {% if brew_method.method_name == recipe.recipe_method %}
+                                <option value="{{ brew_method.method_name }}" selected>{{ brew_method.method_name }}</option>
+                            {% else %}
+                                <option value="{{ brew_method.method_name }}">{{ brew_method.method_name }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <label for="brew_method">Brew Method</label>
@@ -23,9 +27,13 @@
                 <div class="input-field col s12 m10 offset-m1">
                     <i class="fas fa-signal prefix"></i>
                     <select name="roast_level" id="roast_level" class="validate" required>
-                        <option value="" disabled selected>Choose a Roast Level</option>
+                        <option value="" disabled>Choose a Roast Level</option>
                         {% for roast in roast_levels %}
-                        <option value="{{ roast }}">{{ roast }}</option>
+                            {% if roast == recipe.roast_level %}
+                                <option value="{{ roast }}" selected>{{ roast }}</option>
+                            {% else %}
+                                <option value="{{ roast }}">{{ roast }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <label for="roast_level">Roast Level</label>
@@ -37,9 +45,13 @@
                 <div class="input-field col s12 m10 offset-m1">
                     <i class="fas fa-mortar-pestle prefix"></i>
                     <select name="grind_size" id="grind_size" class="validate" required>
-                        <option value="" disabled selected>Choose a Grind Size</option>
+                        <option value="" disabled>Choose a Grind Size</option>
                         {% for grind in grind_sizes %}
-                        <option value="{{ grind }}">{{ grind }}</option>
+                            {% if grind == recipe.grind_size %}
+                                <option value="{{ grind }}" selected>{{ grind }}</option>
+                            {% else %}
+                                <option value="{{ grind }}">{{ grind }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <label for="grind_size">Grind Size</label>
@@ -50,7 +62,7 @@
             <div class="input-field col s12 m10 offset-m1">
                 <i class="fas fa-weight prefix"></i>
                 <input id="coffee_weight" name="coffee_weight" type="number" step="0.1" min="1" max="10000" class="validate"
-                    required>
+                    value="{{ recipe.coffee_weight }}" required>
                 <label for="coffee_weight">Coffee Weight (in grams)</label>
             </div>
 
@@ -58,18 +70,18 @@
             <div class="input-field col s12 m10 offset-m1">
                 <i class="fas fa-tint prefix"></i>
                 <input id="water_weight" name="water_weight" type="number" step="0.1" min="1" max="10000" type="text"
-                    class="validate" required>
+                    class="validate" value="{{ recipe.water_weight }}" required>
                 <label for="water_weight">Water Weight (in millilitres)</label>
             </div>
 
             <!-- Brew Time -->
             <div class="input-field col s6 m4 offset-m1">
                 <i class="far fa-clock prefix"></i>
-                <input id="time_mins" name="time_mins" type="number" min="1" max="60" class="validate" required>
+                <input id="time_mins" name="time_mins" type="number" min="1" max="60" class="validate" value="{{ recipe.time_mins }}" required>
                 <label for="time_mins">Brew Time (Mins)</label>
             </div>
             <div class="input-field col s6 m4 offset-m2">
-                <input id="time_secs" name="time_secs" type="number" min="1" max="60" class="validate" required>
+                <input id="time_secs" name="time_secs" type="number" min="1" max="60" class="validate" value="{{ recipe.time_secs }}" required>
                 <label for="time_secs">Brew Time (Seconds)</label>
             </div>
 
@@ -77,8 +89,9 @@
             <div class="row">
                 <div class="input-field col s12 m10 offset-m1">
                     <i class="far fa-sticky-note prefix"></i>
-                    <textarea id="description" name="description" minlength=1 maxlength=100 class="materialize-textarea"
-                        required></textarea>
+                    <textarea id="description" name="description" minlength=1 maxlength=100 class="materialize-textarea" required>
+                        {{- recipe.description -}}
+                    </textarea>
                     <label for="description">Description</label>
                 </div>
             </div>
