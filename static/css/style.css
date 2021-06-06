@@ -168,7 +168,8 @@ h2,
     padding: 1rem;
 }
 
-.card {
+.card,
+.card-panel {
     background-color: rgb(196, 146, 110, 0.75);
     color: rgb(58, 50, 56);
     font-size: 0.9rem;
@@ -237,6 +238,14 @@ h2,
 .input-field>#time_secs,
 .input-field>#description {
     border-bottom: 1px solid rgb(58, 50, 56, 0.75);
+}
+
+/* Brew Methods */
+
+.brew-method-card {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
 }
 
 /* Modals */
