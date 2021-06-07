@@ -1,12 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
-    {% for recipe in recipes %}
-        {{ recipe.recipe_method }}<br>
-        {{ recipe.roast_level }}<br>
-        {{ recipe.grind_size }}<br>
-        {{ recipe.coffee_weight }}<br>
-        {{ recipe.water_weight }}<br>
-        {{ recipe.time }}<br>
-        {{ recipe.description }}<br>
-    {% endfor %}
+    <h2 class="center-align">Add A Brew Method</h2>
+
+    <div class="row card-panel form-card">
+        <form action="{{ url_for('add_brew_method') }}" method="POST" class="col s12 recipe-form">
+            <!-- Brew Method -->
+            <div class="row">
+                <div class="input-field col s12 m10 offset-m1">
+                    <i class="fas fa-coffee prefix"></i>
+                    <input name="brew_method" id="brew_method" class="validate" type="text" minlength="1" maxlength="50" required></input>
+                    <label for="brew_method">Brew Method Name</label>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="row">
+                <button type="submit" class="green-btn btn text-shadow col s3 offset-s2">
+                    <i class="far fa-save"></i><span class="hide-on-small-only"> Save</span>
+                </button>
+                <a href="{{ url_for('brew_methods', username=session['user']) }}" class="red-btn btn text-shadow col s3 offset-s2">
+                    <i class="far fa-times-circle"></i> Cancel
+                </a>
+            </div>
+        </form>
+    </div>
 {% endblock %}
