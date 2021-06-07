@@ -189,6 +189,14 @@ def brew_methods():
 
 @app.route("/add_brew_method", methods=["GET", "POST"])
 def add_brew_method():
+    if request.method == "POST":
+        brew_method = {
+            "method_name": request.form.get("brew_method")
+        }
+        mongo.db.brew_methods.insert_one(brew_method)
+        flash("Brew Method Has Been Added!")
+        return redirect(url_for('brew_methods'))
+
     return render_template("add_brew_method.html")
 
 
