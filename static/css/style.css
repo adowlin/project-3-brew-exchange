@@ -87,6 +87,7 @@ header .sidenav li>a>i {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 100;
 }
 
 /* Add some top padding to the page content to prevent sudden quick movement */
