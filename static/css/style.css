@@ -236,7 +236,8 @@ h2,
 .input-field>#water_weight,
 .input-field>#time_mins,
 .input-field>#time_secs,
-.input-field>#description {
+.input-field>#description,
+.input-field>#brew_method {
     border-bottom: 1px solid rgb(58, 50, 56, 0.75);
 }
 
