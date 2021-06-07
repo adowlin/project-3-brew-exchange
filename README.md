@@ -70,6 +70,7 @@ The User Experience for this site was planned & developed using the [5 Planes of
 ## Credits
 
 ### Content
+- CSS & JS for Sticky NAvbar functionality adapted from [W3 Schools Example](https://www.w3schools.com/howto/howto_js_navbar_sticky.asp).
 
 ### Media
 

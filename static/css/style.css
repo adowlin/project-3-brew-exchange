@@ -41,6 +41,10 @@ main {
 
 /* Navbar & Collapsible Sidenav */
 
+#nav_bar {
+    height: 10vh;
+}
+
 header nav .nav-wrapper,
 header nav .nav-wrapper .brand-logo,
 header nav .nav-wrapper .sidenav-trigger,
@@ -75,6 +79,19 @@ header .sidenav li>a {
 header .sidenav li>a>i {
     color: rgb(239, 242, 241);
     margin-right: 1rem;
+}
+
+/* CSS for sticky Navbar adapted from example here: https://www.w3schools.com/howto/howto_js_navbar_sticky.asp
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement */
+.sticky+.content {
+    padding-top: 6rem;
 }
 
 /* Buttons */
