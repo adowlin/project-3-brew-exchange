@@ -74,6 +74,11 @@ header nav .nav-wrapper .brand-logo {
 
 header nav .nav-wrapper li>a {
     color: rgb(239, 242, 241);
+    font-size: 1.1rem;
+}
+
+header nav .nav-wrapper li>a:hover {
+    color: rgb(196, 146, 110);
 }
 
 header nav .nav-wrapper li>a>i {
@@ -303,8 +308,16 @@ h2,
 
 .page-footer {
     background-color: rgb(58, 50, 56);
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding-top: 0;
+}
+
+.page-footer a {
+    color: rgb(239, 242, 241);
+}
+
+.page-footer a:hover {
+    color: rgb(196, 146, 110);
 }
 
 @media only screen and (min-width: 768px) {
