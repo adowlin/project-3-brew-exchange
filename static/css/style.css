@@ -51,7 +51,7 @@ header nav .nav-wrapper .brand-logo {
     color: rgb(239, 242, 241);
     margin-right: 1rem;
     /* text-shadow styling adapted from https://css-tricks.com/3d-text-tower/ */
-    text-shadow: 0.1rem 0.1rem rgb(196, 146, 110), 0.2rem 0.2rem rgb(196, 146, 110), 0.3rem 0.3rem rgb(196, 146, 110);
+    text-shadow: 0.1rem 0.1rem 0 rgb(196, 146, 110), 0.2rem 0.2rem 0 rgb(196, 146, 110), 0.3rem 0.3rem 0 rgb(196, 146, 110);
     -webkit-text-stroke: 0.1rem black;
 }
 
@@ -205,6 +205,11 @@ h2,
     background-color: rgb(196, 146, 110, 0.75);
     color: rgb(58, 50, 56);
     font-size: 0.9rem;
+    border-radius: 0;
+    box-shadow:
+        0 10px 6px -6px rgb(58, 50, 56, 0.5),
+        0 10px 6px -6px rgb(58, 50, 56, 0.5),
+        0 10px 6px -6px rgb(58, 50, 56, 0.5);
 }
 
 .card-title,
