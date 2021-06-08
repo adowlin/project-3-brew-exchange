@@ -23,7 +23,8 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     recipes = mongo.db.recipes.find()
-    return render_template("recipes.html", recipes=recipes)
+    return render_template(
+        "recipes.html", recipes=recipes, page_header="Search Recipes")
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -59,7 +60,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
-    return render_template("register.html")
+    return render_template("register.html", page_header="Register")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -88,7 +89,7 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("login.html")
+    return render_template("login.html", page_header="Log In")
 
 
 @app.route("/profile/<username>/", methods=["GET", "POST"])
@@ -101,7 +102,8 @@ def profile(username):
 
     if session["user"]:
         return render_template(
-            "profile.html", username=username, recipes=recipes)
+            "profile.html", username=username,
+            recipes=recipes, page_header="Your Recipes")
 
     return redirect(url_for("login"))
 
@@ -140,8 +142,8 @@ def add_recipe():
     ]
     return render_template(
         "add_recipe.html", brew_methods=brew_methods,
-        roast_levels=roast_levels, grind_sizes=grind_sizes
-        )
+        roast_levels=roast_levels, grind_sizes=grind_sizes,
+        page_header="Add New Recipe")
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -171,8 +173,8 @@ def edit_recipe(recipe_id):
 
     return render_template(
         "edit_recipe.html", recipe=recipe, brew_methods=brew_methods,
-        roast_levels=roast_levels, grind_sizes=grind_sizes
-        )
+        roast_levels=roast_levels, grind_sizes=grind_sizes,
+        page_header="Edit Recipe")
 
 
 @app.route("/delete/<recipe_id>", methods=["GET", "POST"])
@@ -185,7 +187,9 @@ def delete_recipe(recipe_id):
 @app.route("/brew_methods")
 def brew_methods():
     brew_methods = mongo.db.brew_methods.find()
-    return render_template("brew_methods.html", brew_methods=brew_methods)
+    return render_template(
+        "brew_methods.html", brew_methods=brew_methods,
+        page_header="Manage Brew Methods")
 
 
 @app.route("/add_brew_method", methods=["GET", "POST"])
@@ -198,7 +202,7 @@ def add_brew_method():
         flash("Brew Method Has Been Added!")
         return redirect(url_for('brew_methods'))
 
-    return render_template("add_brew_method.html")
+    return render_template("add_brew_method.html", page_header="Add A Brew Method")
 
 
 @app.route("/delete_brew_method/<brew_method_id>", methods=["GET", "POST"])

@@ -66,6 +66,16 @@
     </section>
     
     <main class="container">
+        <div id="page-header">
+            <!-- Scroll to search element if template is rendered via "/search" Flask app route.
+                Code adapted from: https://stackoverflow.com/questions/31863582/automatically-scroll-to-a-div-when-flask-returns-rendered-template -->
+            {% if scroll %}
+                <script>
+                    document.location.hash = '#' + '{{ scroll }}';
+                </script>
+            {% endif %}
+            <h2 class="center-align">{{ page_header }}</h2>
+        </div>
         {% block content %}
         {% endblock %}
     </main>

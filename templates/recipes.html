@@ -29,16 +29,6 @@
     </div>
 {% endblock %}
 {% block content %}
-    <div id="search-header">
-        <!-- Scroll to search element if template is rendered via "/search" Flask app route.
-            Code adapted from: https://stackoverflow.com/questions/31863582/automatically-scroll-to-a-div-when-flask-returns-rendered-template -->
-        {% if scroll %}
-            <script>
-                document.location.hash = '#' + '{{ scroll }}';
-            </script>
-        {% endif %}
-        <h2 class="center-align">Search Recipes</h2>
-    </div>
 
     <div class="row card-panel search-wrapper">
         <form action="{{ url_for('search') }}" method="POST" class="col s12">
