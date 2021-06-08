@@ -61,7 +61,7 @@
                                     <strong>{{ recipe.recipe_method }}</strong><br>
                                     <em class="recipe-time-head">{{ recipe.time_mins }}:{{ recipe.time_secs }} mins</em>
                                 </div>
-                                {% if session["user"] == recipe.user %}
+                                {% if session.user|lower == recipe.user|lower or session.user|lower == "admin"|lower %}
                                     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="modal-trigger text-shadow col s2 offset-s1 edit-btn">
                                         <i class="far fa-edit"></i>
                                     </a>
