@@ -109,22 +109,25 @@ def login():
 
 
 @app.route("/profile/<username>/", methods=["GET", "POST"])
+@login_required
 def profile(username):
-    # Get the session user's username from DB
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
-    recipes = list(mongo.db.recipes.find({"user": username}))
-
-    if session["user"]:
+    if session["user"] == username:
+        # Get the session user's username from DB
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        # Get the recipes created by this user
+        recipes = list(mongo.db.recipes.find({"user": username}))
         return render_template(
             "profile.html", username=username,
             recipes=recipes, page_header="Your Recipes")
-
-    return redirect(url_for("login"))
+    else:
+        # If user is not the same as username in URL, redirect to own profile
+        flash("You do not have permission to view that page.")
+        return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/logout")
+@login_required
 def logout():
     # Remove user from session cookies
     flash("You have been logged out.")
@@ -133,6 +136,7 @@ def logout():
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
+@login_required
 def add_recipe():
     if request.method == "POST":
         recipe = {
@@ -163,69 +167,102 @@ def add_recipe():
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+@login_required
 def edit_recipe(recipe_id):
-    if request.method == "POST":
-        update_recipe = {
-            "recipe_method": request.form.get("brew_method"),
-            "roast_level": request.form.get("roast_level"),
-            "grind_size": request.form.get("grind_size"),
-            "coffee_weight": request.form.get("coffee_weight"),
-            "water_weight": request.form.get("water_weight"),
-            "time_mins": request.form.get("time_mins"),
-            "time_secs": request.form.get("time_secs"),
-            "description": request.form.get("description"),
-            "user": session["user"]
-        }
-        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, update_recipe)
-        flash("Recipe Has Been Updated!")
-
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    brew_methods = mongo.db.brew_methods.find().sort("method_name", 1)
-    roast_levels = [
-        "Light", "Light-Medium", "Medium", "Medium-Dark", "Dark", "French"]
-    grind_sizes = [
-        "Fine", "Fine-Medium", "Medium", "Medium-Coarse", "Coarse"
-    ]
+    # Check if user matches the user who owns the recipe
+    if session["user"] == recipe["user"]:
+        if request.method == "POST":
+            update_recipe = {
+                "recipe_method": request.form.get("brew_method"),
+                "roast_level": request.form.get("roast_level"),
+                "grind_size": request.form.get("grind_size"),
+                "coffee_weight": request.form.get("coffee_weight"),
+                "water_weight": request.form.get("water_weight"),
+                "time_mins": request.form.get("time_mins"),
+                "time_secs": request.form.get("time_secs"),
+                "description": request.form.get("description"),
+                "user": session["user"]
+            }
+            mongo.db.recipes.update(
+                {"_id": ObjectId(recipe_id)}, update_recipe)
+            flash("Recipe Has Been Updated!")
 
-    return render_template(
-        "edit_recipe.html", recipe=recipe, brew_methods=brew_methods,
-        roast_levels=roast_levels, grind_sizes=grind_sizes,
-        page_header="Edit Recipe")
+        brew_methods = mongo.db.brew_methods.find().sort("method_name", 1)
+        roast_levels = [
+            "Light", "Light-Medium", "Medium", "Medium-Dark", "Dark", "French"]
+        grind_sizes = [
+            "Fine", "Fine-Medium", "Medium", "Medium-Coarse", "Coarse"
+        ]
+
+        return render_template(
+            "edit_recipe.html", recipe=recipe, brew_methods=brew_methods,
+            roast_levels=roast_levels, grind_sizes=grind_sizes,
+            page_header="Edit Recipe")
+    else:
+        flash("You don't have permission to edit this recipe")
+        return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/delete/<recipe_id>", methods=["GET", "POST"])
+@login_required
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-    flash("Recipe Has Been Deleted!")
-    return redirect(request.referrer)
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    # Check if user matches the user who owns the recipe
+    if session["user"] == recipe["user"]:
+        mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+        flash("Recipe Has Been Deleted!")
+        return redirect(request.referrer)
+    else:
+        flash("You don't have permission to delete this recipe.")
+        return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/brew_methods")
+@login_required
 def brew_methods():
-    brew_methods = mongo.db.brew_methods.find()
-    return render_template(
-        "brew_methods.html", brew_methods=brew_methods,
-        page_header="Manage Brew Methods")
+    # Check if user is "admin"
+    if session["user"] == "admin":
+        brew_methods = mongo.db.brew_methods.find()
+        return render_template(
+            "brew_methods.html", brew_methods=brew_methods,
+            page_header="Manage Brew Methods")
+    else:
+        flash("You do not have permission to view that page.")
+        return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/add_brew_method", methods=["GET", "POST"])
+@login_required
 def add_brew_method():
-    if request.method == "POST":
-        brew_method = {
-            "method_name": request.form.get("brew_method")
-        }
-        mongo.db.brew_methods.insert_one(brew_method)
-        flash("Brew Method Has Been Added!")
-        return redirect(url_for('brew_methods'))
+    # Check if user is "admin"
+    if session["user"] == "admin":
+        if request.method == "POST":
+            brew_method = {
+                "method_name": request.form.get("brew_method")
+            }
+            mongo.db.brew_methods.insert_one(brew_method)
+            flash("Brew Method Has Been Added!")
+            return redirect(url_for('brew_methods'))
 
-    return render_template("add_brew_method.html", page_header="Add A Brew Method")
+        return render_template(
+            "add_brew_method.html", page_header="Add A Brew Method")
+    else:
+        flash("You do not have permission to view that page.")
+        return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/delete_brew_method/<brew_method_id>", methods=["GET", "POST"])
+@login_required
 def delete_brew_method(brew_method_id):
-    mongo.db.brew_methods.remove({"_id": ObjectId(brew_method_id)})
-    flash("Brew Method Has Been Deleted!")
-    return redirect(request.referrer)
+    # Check if user is "admin"
+    if session["user"] == "admin":
+        mongo.db.brew_methods.remove({"_id": ObjectId(brew_method_id)})
+        flash("Brew Method Has Been Deleted!")
+        return redirect(url_for('brew_methods'))
+    else:
+        flash("You do not have permission to view that page.")
+        return redirect(url_for("profile", username=session["user"]))
 
 
 if __name__ == "__main__":
