@@ -12,16 +12,31 @@
                                 <a href="#search-header" class="waves-effect waves-light btn red-btn">Search Recipes</a>
                             </div>
                         </div>
-                        <div class="row button-wrapper">
-                            <div class="col s6 offset-s3">
-                                <a href="{{ url_for('login') }}" class="waves-effect waves-light btn red-btn">Log In</a>
+                        {% if session.user %}
+                            <div class="row button-wrapper">
+                                <div class="col s6 offset-s3">
+                                    <a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light btn red-btn">Profile</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row button-wrapper">
-                            <div class="col s6 offset-s3">
-                                <a href="{{ url_for('register') }}" class="waves-effect waves-light btn red-btn">Register</a>
+                            {% if session.user|lower == "admin"|lower %}
+                                <div class="row button-wrapper">
+                                    <div class="col s6 offset-s3">
+                                        <a href="{{ url_for('brew_methods') }}" class="waves-effect waves-light btn red-btn">Manage Methods</a>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% else %}
+                            <div class="row button-wrapper">
+                                <div class="col s6 offset-s3">
+                                    <a href="{{ url_for('login') }}" class="waves-effect waves-light btn red-btn">Log In</a>
+                                </div>
                             </div>
-                        </div>
+                            <div class="row button-wrapper">
+                                <div class="col s6 offset-s3">
+                                    <a href="{{ url_for('register') }}" class="waves-effect waves-light btn red-btn">Register</a>
+                                </div>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
