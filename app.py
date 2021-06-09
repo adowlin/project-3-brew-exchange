@@ -130,8 +130,8 @@ def profile(username):
 @login_required
 def logout():
     # Remove user from session cookies
+    session.clear()
     flash("You have been logged out.")
-    session.pop("user")
     return redirect(url_for("login"))
 
 
