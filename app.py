@@ -249,7 +249,8 @@ def add_brew_method():
     if session["user"] == "admin":
         if request.method == "POST":
             brew_method = {
-                "method_name": request.form.get("brew_method")
+                "method_name": request.form.get("brew_method"),
+                "image_url": request.form.get("brew_image")
             }
             mongo.db.brew_methods.insert_one(brew_method)
             flash("Brew Method Has Been Added!")

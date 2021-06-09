@@ -274,11 +274,21 @@ h2,
 .input-field>#time_mins,
 .input-field>#time_secs,
 .input-field>#description,
-.input-field>#brew_method {
+.input-field>#brew_method,
+.input-field>#brew_image {
     border-bottom: 1px solid rgb(58, 50, 56, 0.75);
 }
 
 /* Brew Methods */
+
+.card-image {
+    height: 30rem;
+    overflow: hidden;
+}
+
+.card-image>img {
+    object-fit: fill;
+}
 
 .brew-method-card {
     font-family: 'Space Grotesk', sans-serif;

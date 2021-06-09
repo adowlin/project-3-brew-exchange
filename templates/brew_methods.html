@@ -11,6 +11,9 @@
         <div class="col s12 m6 cards">
             <div class="card-wrapper">
                 <div class="card brew-method-card">
+                    <div class="card-image valign-wrapper">
+                        <img src="{{ brew_method.image_url }}">
+                    </div>
                     <div class="card-content row">
                         <span class="left-align col s6 offset-s2">{{ brew_method.method_name }}</span>
                         <a href="#modal-{{ brew_method._id }}" class="modal-trigger text-shadow delete-btn col s2 offset-s1">
