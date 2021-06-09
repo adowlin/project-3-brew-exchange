@@ -57,34 +57,36 @@ def search():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    if request.method == "POST":
-        # check if username already exists in db
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+    if "user" not in session:
+        if request.method == "POST":
+            # check if username already exists in db
+            existing_user = mongo.db.users.find_one(
+                {"username": request.form.get("username").lower()})
 
-        if existing_user:
-            flash("Username already exists")
-            return redirect(url_for("register"))
+            if existing_user:
+                flash("Username already exists")
+                return redirect(url_for("register"))
 
-        register = {
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
-        }
-        mongo.db.users.insert_one(register)
+            register = {
+                "username": request.form.get("username").lower(),
+                "password": generate_password_hash(
+                    request.form.get("password"))
+            }
+            mongo.db.users.insert_one(register)
 
-        # put the new user into 'session cookie
-        session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
+            # put the new user into 'session cookie
+            session["user"] = request.form.get("username").lower()
+            flash("Registration Successful!")
+            return redirect(url_for("profile", username=session["user"]))
+        return render_template("register.html", page_header="Register")
+    else:
+        flash("You already have an account!")
         return redirect(url_for("profile", username=session["user"]))
-    return render_template("register.html", page_header="Register")
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    if session["user"]:
-        flash("You are already logged in!")
-        return redirect(url_for("profile", username=session["user"]))
-    else:
+    if "user" not in session:
         if request.method == "POST":
             # check if username exists in db
             existing_user = mongo.db.users.find_one(
@@ -110,6 +112,9 @@ def login():
                 return redirect(url_for("login"))
 
         return render_template("login.html", page_header="Log In")
+    else:
+        flash("You are already logged in!")
+        return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/profile/<username>/", methods=["GET", "POST"])
