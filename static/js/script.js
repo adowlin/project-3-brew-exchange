@@ -13,6 +13,7 @@ $(document).ready(function () {
     // Get the navbar & H2 element below it
     var navbar = document.getElementById("nav_bar");
     var pageHeader = document.getElementById("page-header");
+    var flashMessage = document.getElementById("flash-section");
 
     // Get the offset position of the navbar
     var sticky = navbar.offsetTop;
@@ -22,10 +23,16 @@ $(document).ready(function () {
     function stickyNav() {
         if (window.pageYOffset >= sticky) {
             navbar.classList.add("sticky");
-            pageHeader.classList.add("content");
+            if (flashMessage) {
+                flashMessage.classList.add("content");
+            }
+            else {
+                pageHeader.classList.add("content");
+            }
         } else {
             navbar.classList.remove("sticky");
             pageHeader.classList.remove("content");
+            flashMessage.classList.remove("content");
         }
     }
 });
