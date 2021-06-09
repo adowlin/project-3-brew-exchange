@@ -180,7 +180,7 @@ def add_recipe():
 def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     # Check if user matches the user who owns the recipe
-    if session["user"] == recipe["user"]:
+    if session["user"] == recipe["user"] or session["user"] == "admin":
         if request.method == "POST":
             update_recipe = {
                 "recipe_method": request.form.get("brew_method"),
@@ -191,7 +191,7 @@ def edit_recipe(recipe_id):
                 "time_mins": request.form.get("time_mins"),
                 "time_secs": request.form.get("time_secs"),
                 "description": request.form.get("description"),
-                "user": session["user"]
+                "user": recipe["user"]
             }
             mongo.db.recipes.update(
                 {"_id": ObjectId(recipe_id)}, update_recipe)
@@ -219,7 +219,7 @@ def edit_recipe(recipe_id):
 def delete_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     # Check if user matches the user who owns the recipe
-    if session["user"] == recipe["user"]:
+    if session["user"] == recipe["user"] or session["user"] == "admin":
         mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
         flash("Recipe Has Been Deleted!")
         return redirect(request.referrer)
