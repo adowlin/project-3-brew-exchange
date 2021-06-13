@@ -276,6 +276,11 @@ def delete_brew_method(brew_method_id):
         return redirect(url_for("profile", username=session["user"]))
 
 
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    return render_template("contact.html", page_header="Contact Us")
+
+
 # Error Handling decorator for custom error page
 # Adapted from Flask documentation:
 # https://flask.palletsprojects.com/en/2.0.x/quickstart/#redirects-and-errors
