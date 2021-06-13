@@ -138,6 +138,16 @@ header .sidenav li>a>i {
     text-shadow: 0.1rem 0.1rem rgb(239, 242, 241, 0.5);
 }
 
+.btn:hover,
+.btn-large:hover {
+    background-color: rgb(58, 50, 56);
+}
+
+.btn:focus,
+.btn-large:focus {
+    background-color: rgb(58, 50, 56, 0.75);
+}
+
 /* Hero Image */
 
 #hero-container {
