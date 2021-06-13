@@ -291,7 +291,11 @@ h2,
 .input-field>#time_secs,
 .input-field>#description,
 .input-field>#brew_method,
-.input-field>#brew_image {
+.input-field>#brew_image,
+.input-field>#contact-username,
+.input-field>#contact-name,
+.input-field>#contact-email,
+.input-field>#contact-message {
     border-bottom: 1px solid rgb(58, 50, 56, 0.75);
 }
 
@@ -310,6 +314,15 @@ h2,
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 500;
     font-size: 1.5rem;
+}
+
+/* Contact */
+
+.contact-text {
+    font-size: 1rem;
+    font-style: italic;
+    margin-top: -0.75rem;
+    color:rgb(58, 50, 56, 0.75);
 }
 
 /* Modals */
