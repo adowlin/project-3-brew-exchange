@@ -133,9 +133,19 @@ header .sidenav li>a>i {
     text-shadow: 0.1rem 0.1rem rgb(239, 242, 241, 0.5);
 }
 
+.edit-btn:hover,
+.edit-btn:focus {
+    color:rgb(87, 167, 115, 0.7);
+}
+
 .delete-btn {
     color: rgb(136, 13, 30);
     text-shadow: 0.1rem 0.1rem rgb(239, 242, 241, 0.5);
+}
+
+.delete-btn:hover,
+.delete-btn:focus {
+    color: rgb(136, 13, 30, 0.7);
 }
 
 .btn:hover,
