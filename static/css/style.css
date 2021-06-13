@@ -339,16 +339,30 @@ h2,
 
 .page-footer {
     background-color: rgb(58, 50, 56);
-    font-size: 1.1rem;
-    padding-top: 0;
+    padding-top: 1rem;
 }
 
-.page-footer a {
+.foot-header {
+    font-size: 1.25rem;
     color: rgb(239, 242, 241);
 }
 
-.page-footer a:hover {
-    color: rgb(196, 146, 110);
+.foot-text,
+.foot-url {
+    font-size: 0.9rem;
+    color: rgb(239, 242, 241, 0.75);
+}
+
+.page-footer .foot-url {
+    color: rgb(239, 242, 241, 0.75);
+}
+
+.page-footer .foot-url:hover {
+    color: rgb(196, 146, 110, 0.75);
+}
+
+.footer-copyright {
+    font-size: 1rem;
 }
 
 @media (min-width: 768px) {
