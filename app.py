@@ -276,6 +276,14 @@ def delete_brew_method(brew_method_id):
         return redirect(url_for("profile", username=session["user"]))
 
 
+# Error Handling decorator for custom error page
+# Adapted from Flask documentation:
+# https://flask.palletsprojects.com/en/2.0.x/quickstart/#redirects-and-errors
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('page_not_found.html'), 404
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
