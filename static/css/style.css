@@ -115,6 +115,8 @@ header .sidenav li>a>i {
 .green-btn {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
+    font-size: 0.9rem;
+    color: rgb(239, 242, 241);
     width: 100%;
 }
 
@@ -158,7 +160,7 @@ header .sidenav li>a>i {
 
 #hero-card {
     background-color: rgb(196, 146, 110, 0.85); 
-    margin-top: 20vh;
+    margin-top: 10vh;
     text-align: center;
 }
 
@@ -166,9 +168,8 @@ header .sidenav li>a>i {
     color: rgb(58, 50, 56);
     text-shadow: 0.2rem 0.2rem rgb(239, 242, 241, 0.25);
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 600;
-    margin-top: -1rem;
     padding: 1.5rem;
 }
 
@@ -176,8 +177,9 @@ header .sidenav li>a>i {
     color: rgb(58, 50, 56);
     text-shadow: 0.1rem 0.1rem rgb(239, 242, 241, 0.25);
     font-family: 'Poppins', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 300;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
 }
 
 /* ----------------- Recipes Section */
@@ -335,9 +337,15 @@ h2,
     color: rgb(196, 146, 110);
 }
 
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
     header nav .nav-wrapper .brand-logo {
         font-size: 3rem;
         margin-right: 2.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    #hero-card {
+        margin-top: 15vh;
     }
 }

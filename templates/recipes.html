@@ -9,31 +9,31 @@
                         <p id="hero-text">Browse & Share Coffee Brewing Recipes!</p>
                         <div class="row button-wrapper">
                             <div class="col s6 offset-s3">
-                                <a href="#search-header" class="waves-effect waves-light btn red-btn">Search Recipes</a>
+                                <a href="#search-header" class="btn red-btn"><i class="fas fa-search hide-on-small-only"></i> Search Recipes</a>
                             </div>
                         </div>
                         {% if session.user %}
                             <div class="row button-wrapper">
                                 <div class="col s6 offset-s3">
-                                    <a href="{{ url_for('profile', username=session['user']) }}" class="waves-effect waves-light btn red-btn">Profile</a>
+                                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn red-btn"><i class="fas fa-user hide-on-small-only"></i> Profile</a>
                                 </div>
                             </div>
                             {% if session.user|lower == "admin"|lower %}
                                 <div class="row button-wrapper">
                                     <div class="col s6 offset-s3">
-                                        <a href="{{ url_for('brew_methods') }}" class="waves-effect waves-light btn red-btn">Manage Methods</a>
+                                        <a href="{{ url_for('brew_methods') }}" class="btn red-btn"><i class="fas fa-clipboard-list hide-on-small-only"></i> Manage <span class="hide-on-small-only">Methods</span></a>
                                     </div>
                                 </div>
                             {% endif %}
                         {% else %}
                             <div class="row button-wrapper">
                                 <div class="col s6 offset-s3">
-                                    <a href="{{ url_for('login') }}" class="waves-effect waves-light btn red-btn">Log In</a>
+                                    <a href="{{ url_for('login') }}" class="btn red-btn"><i class="fas fa-sign-in-alt hide-on-small-only"></i> Log In</a>
                                 </div>
                             </div>
                             <div class="row button-wrapper">
                                 <div class="col s6 offset-s3">
-                                    <a href="{{ url_for('register') }}" class="waves-effect waves-light btn red-btn">Register</a>
+                                    <a href="{{ url_for('register') }}" class="btn red-btn"><i class="fas fa-marker hide-on-small-only"></i> Register</a>
                                 </div>
                             </div>
                         {% endif %}
