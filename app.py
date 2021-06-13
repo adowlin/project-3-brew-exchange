@@ -278,7 +278,13 @@ def delete_brew_method(brew_method_id):
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
-    return render_template("contact.html", page_header="Contact Us")
+    if "user" not in session:
+        return render_template("contact.html", page_header="Contact Us")
+    else:
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        return render_template(
+            "contact.html", page_header="Contact Us", username=username)
 
 
 # Error Handling decorator for custom error page
