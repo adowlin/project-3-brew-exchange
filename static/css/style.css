@@ -335,6 +335,13 @@ h2,
     color:rgb(58, 50, 56, 0.75);
 }
 
+.contact-toasts {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: rgb(87, 167, 115, 0.95);
+    color: rgb(58, 50, 56);
+    font-weight: 400;
+}
+
 /* Modals */
 
 .modal {
