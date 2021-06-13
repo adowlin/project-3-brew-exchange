@@ -192,6 +192,10 @@ header .sidenav li>a>i {
     margin-bottom: 3rem;
 }
 
+#hero-card-wrapper {
+    margin: 0;
+}
+
 /* ----------------- Recipes Section */
 
 /* Recipes Header & Search */
