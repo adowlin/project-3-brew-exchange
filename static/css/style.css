@@ -292,10 +292,10 @@ h2,
 .input-field>#description,
 .input-field>#brew_method,
 .input-field>#brew_image,
-.input-field>#contact-username,
-.input-field>#contact-name,
-.input-field>#contact-email,
-.input-field>#contact-message {
+.input-field>#contactUsername,
+.input-field>#contactName,
+.input-field>#contactEmail,
+.input-field>#contactMessage {
     border-bottom: 1px solid rgb(58, 50, 56, 0.75);
 }
 

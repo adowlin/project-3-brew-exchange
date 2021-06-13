@@ -36,3 +36,43 @@ $(document).ready(function () {
         }
     }
 });
+
+function sendMail(contactForm) {
+    if (userName) {
+        emailjs.send("service_6i30xfe","brew_8gvdejr", {
+            "from_user": userName,
+            "from_email": contactForm.contactEmail.value,
+            "message": contactForm.contactMessage.value
+        })
+        .then(
+            function(response) {
+                console.log("SUCCESS", response);
+                alert("Your message has been sent! We'll get back to you as soon as possible.");
+            },
+            function(error) {
+                console.log("FAILED", error);
+                alert("Message failed to send. Please try again later");
+            }
+        );
+    }
+    else {
+        emailjs.send("service_6i30xfe","brew_8gvdejr", {
+            "from_name": contactForm.contactName.value,
+            "from_email": contactForm.contactEmail.value,
+            "message": contactForm.contactMessage.value
+        })
+        .then(
+            function(response) {
+                console.log("SUCCESS", response);
+                alert("Your message has been sent! We'll get back to you as soon as possible.");
+            },
+            function(error) {
+                console.log("FAILED", error);
+                alert("Message failed to send. Please try again later");
+            }
+        );
+    };
+
+    document.contactForm.reset(); // clears the form data when submitted
+    return false; // prevents page reload
+}

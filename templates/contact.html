@@ -10,16 +10,16 @@
     </div>
 
     <div class="row register-form">
-        <form action="" method="POST" class="col s12 m8 offset-m2">
+        <form name="contactForm" onsubmit="return sendMail(this);" method="POST" class="col s12 m8 offset-m2">
             <div class="card-panel form-card">
                 <!-- Username if user is logged in -->
                 {% if session.user %}
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-user-plus prefix"></i>
-                            <input type="text" value="{{ username }}" id="contact-username" name="contact-username" minlenth="5"
+                            <input type="text" value="{{ username }}" id="contactUsername" name="contactUsername" minlenth="5"
                                 maxlength="15" class="validate" disabled>
-                            <label for="contact-username">Username</label>
+                            <label for="contactUsername">Username</label>
                         </div>
                     </div>
                 {% else %}
@@ -27,9 +27,9 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="far fa-user prefix"></i>
-                            <input type="text" id="contact-name" name="contact-name" minlength="1"
+                            <input type="text" id="contactName" name="contactName" minlength="1"
                                 maxlength="50" pattern="^[a-zA-Z0-9]{1,50}$" class="validate" required>
-                            <label for="contact-name">Name</label>
+                            <label for="contactName">Name</label>
                         </div>
                     </div>
                 {% endif %}
@@ -37,17 +37,17 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-at prefix"></i>
-                        <input type="email" id="contact-email" name="contact-email" minlength="1"
+                        <input type="email" id="contactEmail" name="contactEmail" minlength="1"
                             maxlength="50" class="validate" required>
-                        <label for="contact-email">Email Address</label>
+                        <label for="contactEmail">Email Address</label>
                     </div>
                 </div>
                 <!-- Description -->
                 <div class="row">
                     <div class="input-field col s12 m10 offset-m1">
                         <i class="far fa-sticky-note prefix"></i>
-                        <textarea id="contact-message" name="contact-message" minlength=1 maxlength=500 class="materialize-textarea" required></textarea>
-                        <label for="contact-message">Your Message</label>
+                        <textarea id="contactMessage" name="contactMessage" minlength=1 maxlength=500 class="materialize-textarea" required></textarea>
+                        <label for="contactMessage">Your Message</label>
                     </div>
                 </div>
                 <!-- Submit Button -->
