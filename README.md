@@ -33,7 +33,7 @@ The User Experience for this site was planned & developed using the [5 Planes of
     - Delete brew method categories.
 
 ### Scope
-#### Features
+#### Existing Features
 
 - Hero Image with Lead Text:
     - The hero image serves the purpose of providing users with an immediate visual cue for the theme of the site - coffee. The Lead Text and call to action buttons concisely explain the site's purpose & demonstrate it's functionality.
@@ -62,6 +62,14 @@ The User Experience for this site was planned & developed using the [5 Planes of
     - Provides functionality for the site admin to remove brew methods from the site.
 - Contact Page:
     - Allows all users, authenticated or unauthenticated, to contact the site admin - for example, to ask the admin to add a new brew method to the list of options available in the "Add Recipe" form.
+
+#### Future Planned Features
+- Affiliate Links:
+    - Would allow users to purchase brewing equipment of coffee beans used in specific recipes via affiliate links. Would additionally provide the admin/site owner with a means to generate income from the site via commissions.
+- "Like" Buttons:
+    - Would provide users with the option to "Like" recipes that they enjoy, and would save those recipes to a list that would be accessible from the user's Profile page.
+- Image Upload for All Users:
+    - Would provide an option for users to upload their own images to the site, to demonstrate how they would brew a particular recipe.
 
 ### Structure
 #### Flowchart
