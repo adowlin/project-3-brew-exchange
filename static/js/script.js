@@ -7,7 +7,7 @@ $(document).ready(function () {
     // JS for sticky Navbar adapted from example here: https://www.w3schools.com/howto/howto_js_navbar_sticky.asp
     // When the user scrolls the page, execute myFunction
     window.onscroll = function () {
-        stickyNav()
+        stickyNav();
     };
 
     // Get the navbar & H2 element below it
@@ -71,7 +71,7 @@ function sendMail(contactForm) {
                 M.toast({html: "Message failed to send. Please try again later", classes: 'contact-toasts'});
             }
         );
-    };
+    }
 
     document.contactForm.reset(); // clears the form data when submitted
     return false; // prevents page reload
