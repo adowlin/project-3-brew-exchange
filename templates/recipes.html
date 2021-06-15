@@ -5,7 +5,7 @@
             <div id="hero-card-wrapper" class="row">
                 <div class="col s10 offset-s1 m6 offset-m3 xl4 offset-xl4">
                     <div class="card-panel" id="hero-card">
-                        <h3 id="hero-header">Brew Exchange</h2>
+                        <h3 id="hero-header">Brew Exchange</h3>
                         <p id="hero-text">Browse & Share Coffee Brewing Recipes!</p>
                         <div class="row button-wrapper">
                             <div class="col s6 offset-s3">
@@ -71,7 +71,7 @@
                 <div class="card-wrapper">
                     <div class="card large">
                         <div class="card-content">
-                            <span class="card-title row">
+                            <div class="card-title row">
                                 <div class="col s6 offset-s1">
                                     <strong>{{ recipe.recipe_method }}</strong><br>
                                     <em class="recipe-time-head">{{ recipe.time_mins }}:{{ recipe.time_secs }} mins</em>
@@ -86,16 +86,15 @@
                                     {% include "components/modals.html" %}
                                 {% endif %}
                                 <hr class="col s12">
-                            </span>
-                            <p class="card-body">
+                            </div>
+                            <div class="card-body">
                                 <strong>Roast Level:</strong> <span>{{ recipe.roast_level }}</span><br>
                                 <strong>Grind Size:</strong> <span>{{ recipe.grind_size }}</span><br>
                                 <strong>Coffee Weight:</strong> <span>{{ recipe.coffee_weight }}g</span><br>
                                 <strong>Water Weight:</strong> <span>{{ recipe.water_weight }}g</span><br>
-                                <strong>Total Brew Time: </strong> <span>{{ recipe.time_mins }}:{{ recipe.time_secs }}
-                                    mins</span><br><br>
+                                <strong>Total Brew Time: </strong> <span>{{ recipe.time_mins }}:{{ recipe.time_secs }} mins</span><br><br>
                                 <p>{{ recipe.description }}</p><br>
-                            </p>
+                            </div>
                         </div>
                         <div class="card-action">
                             <span class="right user-display"><strong>Added By:</strong> {{ recipe.user }}</span>
