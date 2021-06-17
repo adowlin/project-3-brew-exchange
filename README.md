@@ -251,7 +251,7 @@ Manual testing was performed on the following elements that appear on the Regist
 - Username input validates that the input value does not match an existing username.
 - Username & password inputs validate whitespace, minlength, maxlength, and required patterns.
 - Register button hover effect is applied as expected.
-- Register button correctly triggers a User document to be created in the MongoDB database.
+- The Register button correctly triggers a User document to be created in the MongoDB database.
 - After successful registration, the user is automatically logged in and directed to their profile page, with a flash message populated to confirm that their registration was successful.
 - Defensive programming works as expected - an authenticated user who tries to brute-force access the register page is redirected back to their profile page, with a flash message populated to let the user know that they already have an account.
 
@@ -273,22 +273,22 @@ Manual testing was performed on the following aspects of the Profile page:
 - The "Add Recipe" button appears as expected, and it's hover effect works as expected.
 - The "Add Recipe" button correctly directs to the Add Recipe page.
 - If a user has not yet added any recipes, a message is displayed to let them know that they have not added any recipes yet.
-- If a user has added recipes, only the recipes that where the user matches the current user's username are displayed.
-- If an unauthenticated user tried to brute-force access a profile page, they are redirected to the login page, with a flash message stating that they cannot access that page.
+- If a user has added recipes, only the recipes where the user matches the current user's username are displayed.
+- If an unauthenticated user tries to brute-force access a profile page, they are redirected to the login page, with a flash message stating that they cannot access that page.
 - If an authenticated user tries to brute-force access another user's profile page, they are redirected back to their own profile page, with a flash message informing them of the error.
 
 #### Add & Edit Recipe Pages
 Manual testing was performed on the following aspects of the Add Recipe & Edit Recipe pages:
 
-- When adding or edited a recipe, the form correctly populates lists for brew methods, roast levels, and grind sizes, in the dropdown menus.
+- When adding or editing a recipe, the form correctly populates lists for brew methods, roast levels, and grind sizes, in the dropdown menus.
 - When adding or editing a recipe, the number input fields validate that a number has been entered.
 - When adding or editing a recipe, the form validates whitespace values.
 - When editing a recipe, the form correctly pre-populates the existing values for each field of the existing recipe.
 - The "Contact Us" link directs to the Contact page correctly.
-- The "Cancel" button correctly recirects back to the user's profile without submitting the form.
+- The "Cancel" button correctly redirects back to the user's profile without submitting the form.
 - If an unauthenticated user tries to brute-force access the Add or Edit recipe pages, they are redirected to the login page.
 - If an authenticated user tries to brute-force access the Edit recipe page for a recipe that they did not create, they are redirected back to their own profile.
-- If the "admin" superuser tries to brute-force access the Edit recipe page for any recipe regardall of the creator, they are correctly allowed to access the page & edit the recipe.
+- If the "admin" superuser tries to brute-force access the Edit recipe page for any recipe regardless of the creator, they are correctly allowed to access the page & edit the recipe.
 
 #### Deleting A Recipe
 
@@ -296,6 +296,30 @@ Manual testing was performed on the following aspects of the Add Recipe & Edit R
 - If an unauthenticated user tries to brute-force access to the delete recipe page, they are redirected to the login page.
 - If a user tries to brute-force delete a recipe that was not created by them, they are redirected to their own profile.
 - An admin can brute-force delete any recipe as expected.
+
+#### Manage Brew Methods Page (ADMIN)
+
+- "Add Brew Method" button is visible, correctly directs to the Add Brew Method page, and it's hover effect triggers as expected.
+- Brew methods list is correctly iterated over to create a card for each brew method. 
+- Brew method images display appropriately within the corresponding card.
+- If an unauthenticated user tries to brute-force access to the Manage Brew Methods page, they are redirected to the login page.
+- If a user with a username that is not "admin" tries to brute-force access to the page, they are redirected to their own profile.
+
+#### Add Brew Method (ADMIN)
+
+- Form validates whitespace in brew method name.
+- Form validates that a URL has been input for the brew method image.
+- Save button correctly triggers functionality to add brew method to database, and after successfully adding a brew method, directs the admin back to the Manage Brew Methods page with a success message populated.
+- Cancel button directs back to Manage Brew Methods page as expected.
+- Both the Save and Cancel buttons' hover effects trigger as expected.
+- If an unauthenticated user tries to brute-force access to the Add Brew Method page, they are redirected to the login page.
+- If a user with a username that is not "admin" tries to brute-force access to the page, they are redirected to their own profile.
+
+#### Delete Brew Method (ADMIN)
+
+- Defensive programming works as expected. When an admin tries to delete a recipe, they are prompted to confirm or cancel the deletion action via a modal.
+- If an unauthenticated user tries to brute-force delete a brew method, they are redirected to the login page.
+- If a user with a username that is not "admin" tries to brute-force delete a brew method, they are redirected to their own profile.
 
 ### Validation
 
