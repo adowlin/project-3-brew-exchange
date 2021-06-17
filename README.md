@@ -26,6 +26,7 @@ The User Experience for this site was planned & developed using the [5 Planes of
     - Login to my account to see recipes I have added.
     - Edit recipes that I have added.
     - Delete recipes that I have added.
+    - Contact the site owner/admin to request the addition of new brew methods.
 
 - As the site owner, I want to:
     - Log in to my admin/superuser account.
@@ -178,12 +179,15 @@ As a returning visitor, I want to:
     - On the user's Profile page, all recipes that they have added include an Edit icon, a button that opens the "Edit Recipe" page when clicked.
     - On the Edit Recipe page, a form is presented to the user, pre-filled with the current recipe information.
     - The user can edit the pre-filled information, and click the "Save" button. They are redirected to their profile, with a flash message confirming that the recipe has been updated.
-    - On the All Recipes/Home page, a conditional check is implemented to populate the above described Ddit button only on recipes that the current user has added.
+    - On the All Recipes/Home page, a conditional check is implemented to populate the above described Edit button only on recipes that the current user has added.
 - Delete recipes that I have added:
     - On the user's Profile page, all recipes that they have added include a Delete icon, a button that opens the "Delete Recipe" modal when clicked.
     - On the Delete Recipe modal, the user is presented with a message prompting them to confirm that they wish to delete the recipe.
     - The user can confirm that they want to delete the recipe by clicking the modal's "Delete" button. They are directed back to their Profile page, and a flash message is populated confirming that the recipe has been deleted.
     - On the All Recipes/Home page, a conditional check is implemented to populate the above described Delete button only on recipes that the current user has added.
+- Contact the site owner/admin to request the addition of new brew methods:
+    - On all site pages, the "Contact" link is visible in the site's Footer.
+    - On the Add Recipe & Edit Recipe pages, a link to the Contact page is visible above the form elements. This prompts users to contact the site owner if they would like a brew method to be added to the list.
 
 As the site owner, I want to:
 - Login to my admin/superuser account:
