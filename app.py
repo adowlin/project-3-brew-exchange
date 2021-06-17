@@ -230,7 +230,7 @@ def delete_recipe(recipe_id):
     if session["user"] == recipe["user"] or session["user"] == "admin":
         mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
         flash("Recipe Has Been Deleted!")
-        return redirect(request.referrer)
+        return redirect(url_for("profile", username=session["user"]))
     else:
         flash("You don't have permission to delete this recipe.")
         return redirect(url_for("profile", username=session["user"]))

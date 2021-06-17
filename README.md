@@ -245,7 +245,7 @@ Manual testing was performed on the following elements that appear on the Recipe
     - Edit & Delete buttons correctly appear on all recipes for the "admin" superuser, only when the current username is "admin", and the admin is logged in.
 
 #### Register Page
-Manual testing was performed on the following elements that appear on the Registration page;
+Manual testing was performed on the following elements that appear on the Registration page:
 
 - "Log In Here" link correctly directs to the login page for users who already have an account.
 - Username input validates that the input value does not match an existing username.
@@ -256,7 +256,7 @@ Manual testing was performed on the following elements that appear on the Regist
 - Defensive programming works as expected - an authenticated user who tries to brute-force access the register page is redirected back to their profile page, with a flash message populated to let the user know that they already have an account.
 
 #### Login Page
-Manual testing was performed on the following elements that appear on the Login page;
+Manual testing was performed on the following elements that appear on the Login page:
 
 - "Register Here" link correctly directs to the Register page for users who are not yet registered.
 - Login form inputs validate whitespace, minlength, maxlength, and required patterns.
@@ -267,7 +267,7 @@ Manual testing was performed on the following elements that appear on the Login 
 - Defensive programming works as expected - an authenticated user who tries to brute-force access the login page is redirected back to their profile page, with a flash message populated to let the user know that they are already logged in.
 
 #### Profile Page
-Manual testing was performed on the following aspects of the Profile page;
+Manual testing was performed on the following aspects of the Profile page:
 
 - After logging in, a flash message displays the correct user name to confirm that the login was successful.
 - The "Add Recipe" button appears as expected, and it's hover effect works as expected.
@@ -276,6 +276,26 @@ Manual testing was performed on the following aspects of the Profile page;
 - If a user has added recipes, only the recipes that where the user matches the current user's username are displayed.
 - If an unauthenticated user tried to brute-force access a profile page, they are redirected to the login page, with a flash message stating that they cannot access that page.
 - If an authenticated user tries to brute-force access another user's profile page, they are redirected back to their own profile page, with a flash message informing them of the error.
+
+#### Add & Edit Recipe Pages
+Manual testing was performed on the following aspects of the Add Recipe & Edit Recipe pages:
+
+- When adding or edited a recipe, the form correctly populates lists for brew methods, roast levels, and grind sizes, in the dropdown menus.
+- When adding or editing a recipe, the number input fields validate that a number has been entered.
+- When adding or editing a recipe, the form validates whitespace values.
+- When editing a recipe, the form correctly pre-populates the existing values for each field of the existing recipe.
+- The "Contact Us" link directs to the Contact page correctly.
+- The "Cancel" button correctly recirects back to the user's profile without submitting the form.
+- If an unauthenticated user tries to brute-force access the Add or Edit recipe pages, they are redirected to the login page.
+- If an authenticated user tries to brute-force access the Edit recipe page for a recipe that they did not create, they are redirected back to their own profile.
+- If the "admin" superuser tries to brute-force access the Edit recipe page for any recipe regardall of the creator, they are correctly allowed to access the page & edit the recipe.
+
+#### Deleting A Recipe
+
+- When deleting a recipe, defensive programming works as expected - prompting the user to either confirm or cancel the deletion action via a modal.
+- If an unauthenticated user tries to brute-force access to the delete recipe page, they are redirected to the login page.
+- If a user tries to brute-force delete a recipe that was not created by them, they are redirected to their own profile.
+- An admin can brute-force delete any recipe as expected.
 
 ### Validation
 
