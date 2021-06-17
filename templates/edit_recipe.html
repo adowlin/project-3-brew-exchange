@@ -76,14 +76,14 @@
             </div>
 
             <!-- Brew Time -->
-            <div class="input-field col s6 m4 offset-m1">
+            <div class="input-field col s7 m4 offset-m1">
                 <i class="far fa-clock prefix"></i>
                 <input id="time_mins" name="time_mins" type="number" min="1" max="60" class="validate" value="{{ recipe.time_mins }}" required>
-                <label for="time_mins">Brew Time (Mins)</label>
+                <label for="time_mins"><span class="hide-on-small-only">Brew</span> Time (Mins)</label>
             </div>
-            <div class="input-field col s6 m4 offset-m2">
+            <div class="input-field col s4 offset-s1 m4 offset-m2">
                 <input id="time_secs" name="time_secs" type="number" min="1" max="60" class="validate" value="{{ recipe.time_secs }}" required>
-                <label for="time_secs">Brew Time (Seconds)</label>
+                <label for="time_secs"><span class="hide-on-small-only">Brew</span> Time (Secs)</label>
             </div>
 
             <!-- Description -->
