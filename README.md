@@ -331,6 +331,18 @@ Manual testing was performed on the following aspects of the Add Recipe & Edit R
 - If the EmailJS functionality returns an error, a message to reflect this is displayed to the user.
 
 ### Validation
+#### HTML
+- [W3C HTML Validator](https://validator.w3.org/nu/) was used to validate the HTML on all pages of the site. This validator does not recognise Jinja templates & scripting, so returned errors for the lines of code where Jinja is used - this is to be expected. No errors are present in the HTML code otherwise.
+
+#### CSS
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the CSS code in the style.css file. No errors are present.
+
+#### JavaScript
+- [JSHint](https://jshint.com/) was used to validate the JavaScript code in the script.js file. No errors are present.
+- [Esprima](https://esprima.org/demo/validate.html) was also used to validate the JavaScript syntax. Returned result: "Code is syntactically valid".
+
+#### Python
+- [PEP8 Online](http://pep8online.com/) was used to validate that the Python code in app.py is PEP8 compliant. No errors are present.
 
 ## Deployment
 
