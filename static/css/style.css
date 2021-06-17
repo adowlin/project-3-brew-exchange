@@ -220,6 +220,21 @@ h2,
     color: rgb(58, 50, 56);
 }
 
+.search-toast {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: rgb(136, 13, 30, 0.95);
+    color: rgb(239, 242, 241);
+    font-weight: 400;
+}
+
+/* Materialize toast positioning adapter from: https://stackoverflow.com/questions/33566041/materialize-css-change-position-of-toast-dialog */
+#toast-container {
+    min-width: 10%;
+    top: 40%;
+    right: 50%;
+    transform: translateX(50%) translateY(50%);
+}
+
 /* Recipe Cards */
 
 .card-wrapper {

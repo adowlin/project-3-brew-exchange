@@ -46,11 +46,11 @@
 {% block content %}
 
     <div class="row card-panel search-wrapper">
-        <form action="{{ url_for('search') }}" method="POST" class="col s12">
+        <form action="{{ url_for('search') }}" onsubmit="return validateForm()" name="myForm" method="POST" class="col s12">
             <div class="row valign-wrapper center-align">
                 <div class="input-field col s12">
                     <i class="fas fa-search prefix"></i>
-                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                    <input type="text" name="query" id="query" minlength="3" maxlength="100" required>
                     <label for="query">Search Recipes</label>
                 </div>
             </div>

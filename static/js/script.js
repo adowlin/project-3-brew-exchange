@@ -76,3 +76,12 @@ function sendMail(contactForm) {
     document.contactForm.reset(); // clears the form data when submitted
     return false; // prevents page reload
 }
+
+// Function for whitespace validation adapted from: https://stackoverflow.com/questions/27543671/javascript-form-validation-not-empty-or-no-whitespaces
+function validateForm() {
+    var x = document.forms["myForm"]["query"].value;
+    if (x.trim() == null || x.trim() == "" || x === " ") {
+        M.toast({html: "Search must contain letters or numbers", classes: 'search-toast'});
+        return false;
+    }
+}
