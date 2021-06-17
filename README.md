@@ -1,10 +1,10 @@
-# Brew Exchange
+<h1 align="center">Brew Exchange</h1>
 
 [View the deployed site here.](https://ms3-brew-exchange.herokuapp.com/)
 
 Brew Exchange is a website where users can share their coffee recipes with the specialty coffee community, and can access recipes from other members of the community. This website was created for submission as my Milestone Project 3 as part of the Diploma in Full Stack Software Development course with Code Institute.<br>
 
-<img src="readme-assets/images/brew-exchange-mockup.png" alt="responsive site mockups">
+[<img src="readme-assets/images/brew-exchange-mockup.png" alt="responsive site mockups">](https://ms3-brew-exchange.herokuapp.com/)
  
 ## User Experience (UX)
 
@@ -207,6 +207,14 @@ As the site owner, I want to:
     - On the All Recipes/Home page, a conditional check is in place to populate the edit and delete buttons on all recipes, if the current user is "admin".
 
 ### Manual Testing
+#### All Pages
+Manual testing was performed on the following elements that appear across all pages on the site, to ensure that all are working as expected;
+
+- Navbar:
+    - Clicking the site logo in the navbar correctly directs back to the site's home page.
+    - All navigation links direct the user to the correct site page for each link.
+    - Collabsable sidebar button opens the sidbar navigation element on mobile devices.
+    - All navigation links within the collapsable sidebar correctly direct the user to the corresponding site page.
 
 ### Validation
 
