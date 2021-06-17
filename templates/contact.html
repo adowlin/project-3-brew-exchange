@@ -10,7 +10,7 @@
     </div>
 
     <div class="row register-form">
-        <form name="contactForm" onsubmit="return sendMail(this) && validateFormContact();" name="contactForm" method="POST" class="col s12 m8 offset-m2">
+        <form name="contactForm" onsubmit="return sendMail(this) && validateFormContact();" method="POST" class="col s12 m8 offset-m2">
             <div class="card-panel form-card">
                 <!-- Username if user is logged in -->
                 {% if session.user %}
