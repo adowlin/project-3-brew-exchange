@@ -4,7 +4,7 @@
 
 Brew Exchange is a website where users can share their coffee recipes with the specialty coffee community, and can access recipes from other members of the community. This website was created for submission as my Milestone Project 3 as part of the Diploma in Full Stack Software Development course with Code Institute.<br>
 
-[FINAL SITE MOCKUP]
+<img src="readme-assets/images/brew-exchange-mockup.png" alt="responsive site mockups">
  
 ## User Experience (UX)
 
