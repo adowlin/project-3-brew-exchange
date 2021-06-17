@@ -8,7 +8,7 @@ Brew Exchange is a website where users can share their coffee recipes with the s
  
 ## User Experience (UX)
 
-With a large variety of brewing equipment, coffee varieties, and brewing methods, users can search for recipes that suit the coffee or brewing equipment that they have. This site advances the ther user's goals by providing CRUD functionality to the coffee recipes database. It advances the site owner's goals by being a regular user of the site themselves.
+With a large variety of brewing equipment, coffee varieties, and brewing methods, users can search for recipes that suit the coffee or brewing equipment that they have. This site advances the user's goals by providing CRUD functionality to the coffee recipes database. It advances the site owner's goals by being a regular user of the site themselves.
 
 The User Experience for this site was planned & developed using the [5 Planes of UX Design](https://medium.com/designcentered/ux-design-5-planes-method-b1b1d6587c05): Strategy, Scope, Structure, Skeleton, Surface.
 
@@ -23,15 +23,15 @@ The User Experience for this site was planned & developed using the [5 Planes of
 - As a returning visitor, I want to:
     - See coffee recipes added by other users.
     - Search for recipes by keyword.
-    - Log in to my account to see receipes I have added.
+    - Login to my account to see recipes I have added.
     - Edit recipes that I have added.
-    - Delete receipes that I have added.
+    - Delete recipes that I have added.
 
 - As the site owner, I want to:
     - Log in to my admin/superuser account.
     - Add brew method categories for users to choose from when creating recipes.
-    - Edit brew method categories.
     - Delete brew method categories.
+    - Edit or delete all recipes that have been added by any user on the site, to moderate the site's content.
 
 ### Scope
 #### Existing Features
@@ -85,7 +85,7 @@ The User Experience for this site was planned & developed using the [5 Planes of
 ### Surface
 
 - Color Scheme:
-    - Chosen using [coolors.co](https://coolors.co/). This palette was chosen to provide colors that tie in with the coffee theme of the site, and provide complimentary colors that offer sufficient contrasts to work with for accessability purposes:<br>
+    - Chosen using [coolors.co](https://coolors.co/). This palette was chosen to provide colors that tie in with the coffee theme of the site, and provide complimentary colors that offer sufficient contrasts to work with for accessibility purposes:<br>
     [<img src="readme-assets/images/brew-exchange-palette.png" alt="color palette" width="400"/>](https://coolors.co/eff2f1-880d1e-c4926e-57a773-3a3238)
 
 - Typography:
@@ -103,7 +103,7 @@ The User Experience for this site was planned & developed using the [5 Planes of
 - [Git](https://git-scm.com/)
     - Used via the Gitpod terminal for version control, with regular commits, and to push to GitHub & Heroku.
 - [GitHub](https://github.com/)
-    - Used to store site's code repository.
+    - Used to store the site's code repository.
 - [Heroku](https://www.heroku.com/)
     - Used to host the deployed site.
 - [Lucidchart](https://www.lucidchart.com)
@@ -139,7 +139,68 @@ The User Experience for this site was planned & developed using the [5 Planes of
 
 ## Testing
 
-### Testing User Stories from User Experience (UX) section
+### Testing User Stories from User Experience (UX) Section
+
+As a first-time visitor, I want to;
+- See coffee recipes that other users have added:
+    - On the landing page, the "Search Recipes" button is immediately visible.
+    - After scrolling down the homepage, recipes added by other users are visible.
+    - On all pages, the "All Recipes" button is visible in the Navbar.
+    - Recipe cards on the "All Recipes" page cleanly display the recipe information.
+- Search for recipes by keywords:
+    - On the landing page, the "Search Recipes" button is immediately visible, and can be clicked to jump to the "Search" section of the page.
+    - After scrolling down the landing page, the "Search" functionality is visible.
+    - The search bar can be used to search for recipes via the input of a keyword & clicking the "Search" button.
+    - Current search results can be cleared to re-populate all recipes by clicking the "Clear" button".
+- Register an account to add my own recipes:
+    - The "Register" button is immediately visible on the landing page.
+    - On all pages, a "Register" button is visible in the Navbar.
+    - On the "Register" page, users are prompted to register an account by creating a unique username and password via a registration form.
+    - After registering an account, the user is logged in & redirected to their Profile, where the "Add Recipe" button is visible.
+
+As a returning visitor, I want to:
+- See coffee recipes added by other users:
+    - On the landing page, the "Search Recipes" button is immediately visible.
+    - After scrolling down the homepage, recipes added by other users are visible.
+    - On all pages, the "All Recipes" button is visible in the Navbar.
+    - Recipe cards on the "All Recipes" page cleanly display the recipe information.
+- Search for recipes by keyword:
+    - On the landing page, the "Search Recipes" button is immediately visible, and can be clicked to jump to the "Search" section of the page.
+    - After scrolling down the landing page, the "Search" functionality is visible.
+    - The search bar can be used to search for recipes via the input of a keyword & clicking the "Search" button.
+    - Current search results can be cleared to re-populate all recipes by clicking the "Clear" button".
+- Login to my account to see recipes I have added:
+    - The "Log In" button is immediately visible on the landing page.
+    - On all pages, a "Log In" button is visible in the Navbar.
+    - On the Login page, users are prompted to log in to their account with their username and password.
+    - After logging in, the user is redirected to their Profile, where all recipes that they have added are visible.
+- Edit recipes that I have added:
+    - On the user's Profile page, all recipes that they have added include an Edit icon, a button that opens the "Edit Recipe" page when clicked.
+    - On the Edit Recipe page, a form is presented to the user, pre-filled with the current recipe information.
+    - The user can edit the pre-filled information, and click the "Save" button. They are redirected to their profile, with a flash message confirming that the recipe has been updated.
+    - On the All Recipes/Home page, a conditional check is implemented to populate the above described Ddit button only on recipes that the current user has added.
+- Delete recipes that I have added:
+    - On the user's Profile page, all recipes that they have added include a Delete icon, a button that opens the "Delete Recipe" modal when clicked.
+    - On the Delete Recipe modal, the user is presented with a message prompting them to confirm that they wish to delete the recipe.
+    - The user can confirm that they want to delete the recipe by clicking the modal's "Delete" button. They are directed back to their Profile page, and a flash message is populated confirming that the recipe has been deleted.
+    - On the All Recipes/Home page, a conditional check is implemented to populate the above described Delete button only on recipes that the current user has added.
+
+As the site owner, I want to:
+- Login to my admin/superuser account:
+    - On the Login page, if an admin account exists, the admin can log in to their admin/superuser account with the username "admin" & their existing password.
+- Add brew method categories for users to choose from when creating recipes:
+    - While logged in as the "admin" user, the "Manage Methods" button is visible on the landing page.
+    - While logged in as the "admin" user, the "Manage Brew Methods" button is visible on all site pages in the Navbar.
+    - On the Manage Brew Methods page, the admin is presented with a list of currently added brew methods from the MongoDB database. 
+    - On the Manage Brew Methods page, the "Add Brew Method" button is immediately visible. When clicked, this button opens the "Add Brew Method" page.
+    - On the Add Brew Method page, the admin is presented with a form which prompts them to enter the name of the brew method, and a URL for an image of the brew method.
+    - After saving the brew method, the admin is redirected to the Manage Brew Methods page, with a flash message shown to confirm that the brew method has been added.
+- Delete brew method categories:
+    - On the Manage Brew Methods page, all brew method cards include a Delete icon, a button that opens the "Delete Brew Method" modal when clicked.
+    - On the Delete Brew Method modal, the admin is presented with a message prompting them to confirm that they wish to delete the brew method.
+    - The admin can confirm that they want to delete the brew method by clicking the modal's "Delete" button. They are directed back to the Manage Brew Methods page, with a flash message populated confirming that the brew method has been deleted.
+- Edit or delete all recipes that have been added by any user on the site, to moderate the site's content:
+    - On the All Recipes/Home page, a conditional check is in place to populate the edit and delete buttons on all recipes, if the current user is "admin".
 
 ### Further Testing
 
@@ -148,7 +209,7 @@ The User Experience for this site was planned & developed using the [5 Planes of
 ## Credits
 
 ### Content
-- CSS & JS for Sticky Navbar functionality adapted from [W3 Schools Example](https://www.w3schools.com/howto/howto_js_navbar_sticky.asp).
+- CSS & JS for Sticky Navbar functionality adapted from [W3Schools Example](https://www.w3schools.com/howto/howto_js_navbar_sticky.asp).
 
 ### Media
 
