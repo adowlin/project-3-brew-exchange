@@ -324,9 +324,9 @@ Manual testing was performed on the following aspects of the Add Recipe & Edit R
 #### Contact Page
 
 - Username value correctly pre-populates the current user's username if a user is in session.
-- Form asks user to input their name if the user is not currently logged in.
+- Form asks the user to input their name if the user is not currently logged in.
 - Form inputs validate whitespace & email address format.
-- Submit button correctly triggers EmailJS function, and hover effect triggers as expected.
+- Submit button correctly triggers the EmailJS function, and the hover effect triggers as expected.
 - After successful form submission, a custom confirmation message is displayed.
 - If the EmailJS functionality returns an error, a message to reflect this is displayed to the user.
 
