@@ -321,6 +321,15 @@ Manual testing was performed on the following aspects of the Add Recipe & Edit R
 - If an unauthenticated user tries to brute-force delete a brew method, they are redirected to the login page.
 - If a user with a username that is not "admin" tries to brute-force delete a brew method, they are redirected to their own profile.
 
+#### Contact Page
+
+- Username value correctly pre-populates the current user's username if a user is in session.
+- Form asks user to input their name if the user is not currently logged in.
+- Form inputs validate whitespace & email address format.
+- Submit button correctly triggers EmailJS function, and hover effect triggers as expected.
+- After successful form submission, a custom confirmation message is displayed.
+- If the EmailJS functionality returns an error, a message to reflect this is displayed to the user.
+
 ### Validation
 
 ## Deployment
