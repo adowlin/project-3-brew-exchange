@@ -97,6 +97,46 @@ The User Experience for this site was planned & developed using the [5 Planes of
 
 ## Technologies Used
 
+### Tools
+- [GitPod](https://www.gitpod.io/)
+    - Used as the preferred IDE for development.
+- [Git](https://git-scm.com/)
+    - Used via the Gitpod terminal for version control, with regular commits, and to push to GitHub & Heroku.
+- [GitHub](https://github.com/)
+    - Used to store site's code repository.
+- [Heroku](https://www.heroku.com/)
+    - Used to host the deployed site.
+- [Lucidchart](https://www.lucidchart.com)
+    - To create the site's structural flowchart.
+- [Balsamiq](https://balsamiq.com/)
+    - To create the site's wireframes.
+- [Google Fonts](https://fonts.google.com/)
+    - Used to import the site's fonts.
+
+### Front-End Technologies
+- [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
+- [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [JQuery 3.6.0](https://jquery.com/)
+    - Used as the primary JavaScript library.
+- [Materialize 1.0.0](https://materializecss.com/)
+    - Used as a responsive front-end framework.
+- [EmailJS](https://www.emailjs.com/)
+    - Used to send emails to the site owner from the contact form.
+
+### Back-End Technologies
+- [Python](https://www.python.org/)
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+    - Used with Python as the primary web microframework.
+- [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
+    - Used for creating templates with Flask.
+- [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/)
+    - Used for password hashing & authentication on the site.
+- [MongoDB Atlas](https://www.mongodb.com/)
+    - Used to store the site's database.
+- [PyMongo](https://pypi.org/project/pymongo/)
+    - Used to interact with the MongoDB database from Python.
+
 ## Testing
 
 ### Testing User Stories from User Experience (UX) section
