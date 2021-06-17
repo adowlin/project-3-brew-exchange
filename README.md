@@ -261,9 +261,21 @@ Manual testing was performed on the following elements that appear on the Login 
 - "Register Here" link correctly directs to the Register page for users who are not yet registered.
 - Login form inputs validate whitespace, minlength, maxlength, and required patterns.
 - Login functionality correctly performs validation checks to ensure that the username exists, and that the password is correct for that user.
+- Register button hover effect is applied as expected.
 - An error message is displayed if the username does not exist, or if the user's password is incorrect.
 - After successfully logging in, the user is directed to their profile page, with a flash message to confirm that they are logged in.
 - Defensive programming works as expected - an authenticated user who tries to brute-force access the login page is redirected back to their profile page, with a flash message populated to let the user know that they are already logged in.
+
+#### Profile Page
+Manual testing was performed on the following aspects of the Profile page;
+
+- After logging in, a flash message displays the correct user name to confirm that the login was successful.
+- The "Add Recipe" button appears as expected, and it's hover effect works as expected.
+- The "Add Recipe" button correctly directs to the Add Recipe page.
+- If a user has not yet added any recipes, a message is displayed to let them know that they have not added any recipes yet.
+- If a user has added recipes, only the recipes that where the user matches the current user's username are displayed.
+- If an unauthenticated user tried to brute-force access a profile page, they are redirected to the login page, with a flash message stating that they cannot access that page.
+- If an authenticated user tries to brute-force access another user's profile page, they are redirected back to their own profile page, with a flash message informing them of the error.
 
 ### Validation
 
