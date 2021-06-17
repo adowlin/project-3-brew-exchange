@@ -206,7 +206,9 @@ As the site owner, I want to:
 - Edit or delete all recipes that have been added by any user on the site, to moderate the site's content:
     - On the All Recipes/Home page, a conditional check is in place to populate the edit and delete buttons on all recipes, if the current user is "admin".
 
-### Further Testing
+### Manual Testing
+
+### Validation
 
 ## Deployment
 
