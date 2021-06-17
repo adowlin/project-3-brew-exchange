@@ -46,7 +46,7 @@
 {% block content %}
 
     <div class="row card-panel search-wrapper">
-        <form action="{{ url_for('search') }}" onsubmit="return validateForm()" name="myForm" method="POST" class="col s12">
+        <form action="{{ url_for('search') }}" onsubmit="return validateFormSearch()" name="searchForm" method="POST" class="col s12">
             <div class="row valign-wrapper center-align">
                 <div class="input-field col s12">
                     <i class="fas fa-search prefix"></i>

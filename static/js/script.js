@@ -78,10 +78,18 @@ function sendMail(contactForm) {
 }
 
 // Function for whitespace validation adapted from: https://stackoverflow.com/questions/27543671/javascript-form-validation-not-empty-or-no-whitespaces
-function validateForm() {
-    var x = document.forms["myForm"]["query"].value;
+function validateFormSearch() {
+    var x = document.forms["searchForm"]["query"].value;
     if (x.trim() == null || x.trim() == "" || x === " ") {
         M.toast({html: "Search must contain letters or numbers", classes: 'search-toast'});
+        return false;
+    }
+}
+
+function validateFormRecipe() {
+    var x = document.forms["recipeForm"]["description"].value;
+    if (x.trim() == null || x.trim() == "" || x === " ") {
+        M.toast({html: "Description must contain letters or numbers", classes: 'search-toast'});
         return false;
     }
 }
