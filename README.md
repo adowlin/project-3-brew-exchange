@@ -332,7 +332,7 @@ Manual testing was performed on the following aspects of the Add Recipe & Edit R
 
 ### Validation
 #### HTML
-- [W3C HTML Validator](https://validator.w3.org/nu/) was used to validate the HTML on all pages of the site. This validator does not recognise Jinja templates & scripting, so returned errors for the lines of code where Jinja is used - this is to be expected. No errors are present in the HTML code otherwise.
+- [W3C HTML Validator](https://validator.w3.org/nu/) was used to validate the HTML on all pages of the site. This validator does not recognise Jinja templates & scripting, so returns errors for the lines of code where Jinja is used - this is to be expected. No errors are present in the HTML code otherwise.
 
 #### CSS
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the CSS code in the style.css file. No errors are present.
@@ -350,7 +350,24 @@ Manual testing was performed on the following aspects of the Add Recipe & Edit R
 
 ### Content
 - CSS & JS for Sticky Navbar functionality adapted from [W3Schools Example](https://www.w3schools.com/howto/howto_js_navbar_sticky.asp).
+- Search functionality adapted from Code Institute coursework mini project: https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/08-SearchingWithinTheDatabase/01-text_index_searching/static/js/script.js
+- Authentication functionality for register, login functionality adapted from Code Institute coursework mini project: https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/08-SearchingWithinTheDatabase/01-text_index_searching/app.py
 
 ### Media
+- [Techsini](http://techsini.com/multi-mockup/) was used to create the mockup image used in the README file.
+- [favicon.io](https://favicon.io/) used to generate the site's favicon image.
+- [Unsplash](https://unsplash.com/) was used for sourcing images of the site's brew methods:
+    - Aeropress: https://unsplash.com/photos/kEfi-fySyoc
+    - French Press: https://unsplash.com/photos/XItB_MGkUZw
+    - Moka Pot: https://unsplash.com/photos/mn2tsPe6Oe8
+    - V60: https://unsplash.com/photos/4LbLyYESbFE
+    - Chemex: https://unsplash.com/photos/jE-27l7V3NU
+    - Espresso: https://unsplash.com/photos/dvuHNTJxIsg
+    - Kalita Wave: https://unsplash.com/photos/faS2GhY1fjE
+    - Iced: https://unsplash.com/photos/BIeXZhg_7sw
+    - Turkish: https://unsplash.com/photos/okZPXZmbokY
 
 ### Acknowledgements
+- Spencer, my Code Institute mentor, for guidance and encouragement throughout the development of this project.
+- Tim & Simen, Code Institute, for helpful tips and guidance in Masterclasses & group sessions.
+- My family & friends, for their help in design choices & testing of the site.
