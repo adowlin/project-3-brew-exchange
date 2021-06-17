@@ -244,6 +244,27 @@ Manual testing was performed on the following elements that appear on the Recipe
     - Edit & Delete buttons only appear for authenticated users, and only on recipes that match the current user.
     - Edit & Delete buttons correctly appear on all recipes for the "admin" superuser, only when the current username is "admin", and the admin is logged in.
 
+#### Register Page
+Manual testing was performed on the following elements that appear on the Registration page;
+
+- "Log In Here" link correctly directs to the login page for users who already have an account.
+- Username input validates that the input value does not match an existing username.
+- Username & password inputs validate whitespace, minlength, maxlength, and required patterns.
+- Register button hover effect is applied as expected.
+- Register button correctly triggers a User document to be created in the MongoDB database.
+- After successful registration, the user is automatically logged in and directed to their profile page, with a flash message populated to confirm that their registration was successful.
+- Defensive programming works as expected - an authenticated user who tries to brute-force access the register page is redirected back to their profile page, with a flash message populated to let the user know that they already have an account.
+
+#### Login Page
+Manual testing was performed on the following elements that appear on the Login page;
+
+- "Register Here" link correctly directs to the Register page for users who are not yet registered.
+- Login form inputs validate whitespace, minlength, maxlength, and required patterns.
+- Login functionality correctly performs validation checks to ensure that the username exists, and that the password is correct for that user.
+- An error message is displayed if the username does not exist, or if the user's password is incorrect.
+- After successfully logging in, the user is directed to their profile page, with a flash message to confirm that they are logged in.
+- Defensive programming works as expected - an authenticated user who tries to brute-force access the login page is redirected back to their profile page, with a flash message populated to let the user know that they are already logged in.
+
 ### Validation
 
 ## Deployment
