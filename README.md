@@ -213,11 +213,11 @@ Manual testing was performed on the following elements that appear across all pa
 - Navbar:
     - Clicking the site logo in the navbar correctly directs back to the site's home page.
     - All navigation links direct the user to the correct site page for each link.
-    - Collabsable sidebar button opens the sidbar navigation element on mobile devices.
-    - All navigation links within the collapsable sidebar correctly direct the user to the corresponding site page.
+    - Collapsible sidebar button opens the sidebar navigation element on mobile devices.
+    - All navigation links within the collapsible sidebar correctly direct the user to the corresponding site page.
     - Hovering over the navigation links triggers the expected hover effect color.
     - Login & Register navigation links only appear when the user is unauthenticated, and correctly direct to their respective pages.
-    - Profile and Logout navigation links correctly appear only when a user is already logged in, and correctly direct to the Profile page, and log the user out, repectively.
+    - Profile and Logout navigation links correctly appear only when a user is already logged in, and correctly direct to the Profile page, and log the user out, respectively.
     - Manage Brew Methods navigation link appears only when the "admin" user is logged in, and correctly directs to the Brew Methods page.
 - Footer:
     - External links open the correct external site in a new tab.
@@ -234,6 +234,15 @@ Manual testing was performed on the following elements that appear on the Recipe
     - Profile button correctly appears only when a user is already logged in, and correctly directs to the Profile page.
     - Manage Brew Methods button appears only when the "admin" user is logged in, and correctly directs to the Brew Methods page.
     - Hovering over the button in this section correctly triggers the expected hover effect background color.
+- Search Section:
+    - Search functionality validates whitespace and min/max input lengths.
+    - An error message is surfaced when an incomplete search term is entered, or no database documents match the search term.
+    - Page automatically scrolls back to search results after a search is performed.
+    - Clear button reloads the page to clear search terms & re-populate all recipe cards.
+- Recipe Cards:
+    - Recipe info is correctly iterated over to create a card for each recipe.
+    - Edit & Delete buttons only appear for authenticated users, and only on recipes that match the current user.
+    - Edit & Delete buttons correctly appear on all recipes for the "admin" superuser, only when the current username is "admin", and the admin is logged in.
 
 ### Validation
 
