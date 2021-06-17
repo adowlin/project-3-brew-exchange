@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
+    <div class="center-align form-contact-text">
+        Don't see your Brew Method? <a href="{{ url_for('contact') }}">Contact Us!</a>
+    </div>
     <div class="row card-panel form-card">
         <form action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12 recipe-form">
             <!-- Brew Method -->

@@ -292,6 +292,22 @@ h2,
     color: rgb(58, 50, 56, 0.75);
 }
 
+.form-contact-text,
+.form-contact-text a {
+    color: rgb(58, 50, 56);
+    font-size: 1rem;
+}
+
+.form-contact-text a {
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.form-contact-text a:hover,
+.form-contact-text a:focus {
+    color: rgb(58, 50, 56, 0.75);
+}
+
 .select-wrapper input.select-dropdown,
 .input-field>#username,
 .input-field>#password,
