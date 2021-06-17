@@ -93,3 +93,11 @@ function validateFormRecipe() {
         return false;
     }
 }
+
+function validateFormBrewMethod() {
+    var x = document.forms["brewMethodForm"]["brew_method"].value;
+    if (x.trim() == null || x.trim() == "" || x === " ") {
+        M.toast({html: "Brew Method name must contain letters or numbers", classes: 'search-toast'});
+        return false;
+    }
+}

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="row card-panel form-card">
-        <form action="{{ url_for('add_brew_method') }}" method="POST" class="col s12 recipe-form">
+        <form action="{{ url_for('add_brew_method') }}" onsubmit="return validateFormBrewMethod()" name="brewMethodForm" method="POST" class="col s12 recipe-form">
             <!-- Brew Method -->
             <div class="row">
                 <div class="input-field col s12 m10 offset-m1">
