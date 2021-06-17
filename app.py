@@ -48,7 +48,8 @@ def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template(
-        "recipes.html", recipes=recipes, scroll="search-header")
+        "recipes.html", recipes=recipes,
+        scroll="page-header", page_header="Search Recipes")
 
 
 # Authentication functionality for Register, Login, Logout, Profile adapted
