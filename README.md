@@ -215,6 +215,25 @@ Manual testing was performed on the following elements that appear across all pa
     - All navigation links direct the user to the correct site page for each link.
     - Collabsable sidebar button opens the sidbar navigation element on mobile devices.
     - All navigation links within the collapsable sidebar correctly direct the user to the corresponding site page.
+    - Hovering over the navigation links triggers the expected hover effect color.
+    - Login & Register navigation links only appear when the user is unauthenticated, and correctly direct to their respective pages.
+    - Profile and Logout navigation links correctly appear only when a user is already logged in, and correctly direct to the Profile page, and log the user out, repectively.
+    - Manage Brew Methods navigation link appears only when the "admin" user is logged in, and correctly directs to the Brew Methods page.
+- Footer:
+    - External links open the correct external site in a new tab.
+    - Contact link directs to the internal Contact page correctly.
+    - Hovering over the footer links triggers the expected hover effect color.
+
+#### Recipes Page (Home Page)
+Manual testing was performed on the following elements that appear on the Recipes/Home page;
+
+- Hero Section:
+    - Hero image is appropriately responsive across all device sizes.
+    - Search Recipes button triggers page scroll to search section when clicked.
+    - Login & Register buttons only appear when the user is unauthenticated, and correctly direct to their respective pages.
+    - Profile button correctly appears only when a user is already logged in, and correctly directs to the Profile page.
+    - Manage Brew Methods button appears only when the "admin" user is logged in, and correctly directs to the Brew Methods page.
+    - Hovering over the button in this section correctly triggers the expected hover effect background color.
 
 ### Validation
 
