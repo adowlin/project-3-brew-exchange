@@ -113,6 +113,8 @@ The User Experience for this site was planned & developed using the [5 Planes of
     - To create the site's wireframes.
 - [Google Fonts](https://fonts.google.com/)
     - Used to import the site's fonts.
+- [TinyJPG](https://tinyjpg.com/)
+    - Used to compress the site's hero image.
 
 ### Front-End Technologies
 - [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)

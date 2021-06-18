@@ -171,7 +171,7 @@ header .sidenav li>a>i {
     width: 100vw;
     margin: 0;
     padding: 0;
-    background: url(/static/images/hero-img.jpg) no-repeat center scroll;
+    background: url(/static/images/hero-img-compressed.jpg) no-repeat center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

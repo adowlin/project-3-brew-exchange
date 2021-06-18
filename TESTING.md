@@ -196,7 +196,7 @@ Manual testing was performed on the following aspects of the Add Recipe & Edit R
 - If the EmailJS functionality returns an error, a message to reflect this is displayed to the user.
 
 ### Compatibility & Responsiveness
-The site was tested across multiple browsers and device types, with no cross-browser complatibility issues to note.
+The site was tested across multiple browsers and device types, with no cross-browser compatibility issues to note.
 
 - Browsers tested:
     - Chrome (Windows, macOS, iOS, Android)
