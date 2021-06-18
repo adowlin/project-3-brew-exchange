@@ -77,10 +77,10 @@
                                     <em class="recipe-time-head">{{ recipe.time_mins }}:{{ recipe.time_secs }} mins</em>
                                 </div>
                                 {% if session.user|lower == recipe.user|lower or session.user|lower == "admin"|lower %}
-                                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="modal-trigger text-shadow col s2 offset-s1 edit-btn">
+                                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="modal-trigger text-shadow col s2 offset-s1 edit-btn" aria-label="Edit Button">
                                         <i class="far fa-edit"></i>
                                     </a>
-                                    <a href="#modal-{{ recipe._id }}" class="modal-trigger text-shadow col s2 delete-btn">
+                                    <a href="#modal-{{ recipe._id }}" class="modal-trigger text-shadow col s2 delete-btn" aria-label="Delete Button">
                                         <i class="far fa-trash-alt"></i>
                                     </a>
                                     {% include "components/modals.html" %}

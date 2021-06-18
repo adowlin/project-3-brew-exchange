@@ -2,7 +2,7 @@
 {% block content %}
     <div class="row">
         <a href="{{ url_for('add_brew_method') }}" class="green-btn btn text-shadow col s3 right">
-            <i class="fas fa-plus"></i> <span class="hide-on-small-only">New Brew Method</span>
+            <i class="fas fa-plus"></i> <span class="hide-on-small-only" aria-label="Add Brew Method Button">New Brew Method</span>
         </a>
     </div>
 
@@ -16,7 +16,7 @@
                     </div>
                     <div class="card-content row">
                         <span class="left-align col s6 offset-s2">{{ brew_method.method_name }}</span>
-                        <a href="#modal-{{ brew_method._id }}" class="modal-trigger text-shadow delete-btn col s2 offset-s1">
+                        <a href="#modal-{{ brew_method._id }}" class="modal-trigger text-shadow delete-btn col s2 offset-s1" aria-label="Delete Button">
                             <i class="far fa-trash-alt"></i>
                         </a>
                         {% include "components/modals.html" %}

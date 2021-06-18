@@ -19,10 +19,10 @@
             <!-- Buttons -->
             <div class="row">
                 <button type="submit" class="green-btn btn text-shadow col s3 offset-s2">
-                    <i class="far fa-save"></i><span class="hide-on-small-only"> Save</span>
+                    <i class="far fa-save"></i><span class="hide-on-small-only" aria-label="Save Button"> Save</span>
                 </button>
                 <a href="{{ url_for('brew_methods', username=session['user']) }}" class="red-btn btn text-shadow col s3 offset-s2">
-                    <i class="far fa-times-circle"></i><span class="hide-on-small-only"> Cancel</span>
+                    <i class="far fa-times-circle"></i><span class="hide-on-small-only" aria-label="Cancel Button"> Cancel</span>
                 </a>
             </div>
         </form>
