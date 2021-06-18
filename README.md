@@ -139,7 +139,7 @@ The User Experience for this site was planned & developed using the [5 Planes of
     - Used to interact with the MongoDB database from Python.
 
 ## Testing
-Testing documentation can be found in a separate file [TESTING.md]()
+Testing documentation can be found in a separate file [TESTING.md](https://github.com/adowlin/project-3-brew-exchange/blob/master/TESTING.md)
 
 ## Deployment
 ### Local Deployment

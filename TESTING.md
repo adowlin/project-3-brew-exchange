@@ -195,6 +195,24 @@ Manual testing was performed on the following aspects of the Add Recipe & Edit R
 - After successful form submission, a custom confirmation message is displayed.
 - If the EmailJS functionality returns an error, a message to reflect this is displayed to the user.
 
+### Compatibility & Responsiveness
+The site was tested across multiple browsers and device types, with no cross-browser complatibility issues to note.
+
+- Browsers tested:
+    - Chrome (Windows, macOS, iOS, Android)
+    - Safari (macOS, iOS)
+    - Microsoft Edge (Windows, macOS)
+    - Firefox (Windows, macOS)
+    - Samsung Browser (Android)
+- Devices tested:
+    - iPhone XS
+    - Samsung Galaxy Edge
+    - Desktop PC
+    - Laptop
+    - Tablet
+
+The site was found to be fully responsive on device sizes ranging from 320px X 480px to 1920px X 1080px.
+
 ### Validation
 #### HTML
 - [W3C HTML Validator](https://validator.w3.org/nu/) was used to validate the HTML on all pages of the site. This validator does not recognise Jinja templates & scripting, so returns errors for the lines of code where Jinja is used - this is to be expected. No errors are present in the HTML code otherwise.
