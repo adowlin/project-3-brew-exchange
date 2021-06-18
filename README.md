@@ -345,6 +345,84 @@ Manual testing was performed on the following aspects of the Add Recipe & Edit R
 - [PEP8 Online](http://pep8online.com/) was used to validate that the Python code in app.py is PEP8 compliant. No errors are present.
 
 ## Deployment
+### Local Deployment
+
+The following dependencies will need to be installed in order to run this application locally:
+- [Python3](https://www.python.org/downloads) to run the application.
+- [PIP](https://pip.pypa.io/en/stable/installing) to install app requirements.
+- [GitPod](https://www.gitpod.io/) or any preferred IDE, such as [VSCode](https://code.visualstudio.com/).
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for cloning and version control.
+- [MongoDB](https://www.mongodb.com/) to create a database using MongoDB Atlas.
+
+Follow the below steps for local deployment:
+
+1. Clone the GitHub repository by entering the following command into the Git terminal:
+    - `git clone https://github.com/adowlin/project-3-brew-exchange.git`
+2. After cloning the project, create an `env.py` file that includes the below code, replacing the `SECRET_KEY`, `MONGO_URI`, `MONGO_DBNAME` with your own credentials:
+```
+import os
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "YOUR_SECRET_KEY")
+os.environ.setdefault("MONGO_URI", "YOUR_MONGO_URI")
+os.environ.setdefault("MONGO_DBNAME", "coffee_recipes")
+```
+3. Create a `.gitignore` file, and add the `env.py` file to the list of files.
+4. Install all requirements from the [requirements.txt](https://github.com/adowlin/project-3-brew-exchange/blob/master/requirements.txt) file using this command:
+    - `pip3 -r requirements.txt`
+5. Sign up for a [MongoDB](https://www.mongodb.com) account, and create a new Database called `coffee_recipes`. The collections in that database should be structured as follows:
+
+**brew_methods**
+```
+_id: <ObjectId>
+method_name: <string>
+image_url: <string>
+```
+
+**recipes**
+```
+_id: <ObjectId>
+recipe_method: <string>
+roast_level: <string>
+grind_size: <string>
+coffee_weight: <string>
+water_weight: <string>
+time_mins: <string>
+time_secs: <string>
+description: <string>
+user: <string>
+```
+
+**users**
+```
+_id: <ObjectId>
+username: <string>
+password: <string>
+```
+
+6. Run the app using the following command in the terminal:
+    - `python3 app.py`
+
+### Remote Deployment
+
+To deploy this app on Heroku, the following steps were taken:
+
+1. Create a `requirements.txt` file so Heroku can install the required dependencies.
+    - `pip3 freeze --local > requirements.txt`
+    - This project's requirements.txt file can be seen [here](https://github.com/adowlin/project-3-brew-exchange/blob/master/requirements.txt).
+2. Create a `Procfile` with information about the type of app that will be deployed.
+    - `echo web: python app.py > Procfile`
+    - This project's Procfile file can be seen [here](https://github.com/adowlin/project-3-brew-exchange/blob/master/Procfile).
+    - Make sure to delete the blank line at the end of the Profile, as this can cause issues when deploying to Heroku later.
+3. Create a Heroku account, create a project app, and click the "Deploy" tab. 
+4. "Connect GitHub" as the Deployment Method, and select "Enable Automatic Deployment".
+4. In the "Settings" tab, click the "Reveal Config Vars" button to configure environmental variables as follows:
+    - **IP** : `0.0.0.0`
+    - **MONGO_DBNAME**: `coffee_recipes`
+    - **MONGO_URI** : `<YOUR_MONGO_DB_URI>`
+    - **PORT** : `5000`
+    - **SECRET_KEY** : `<YOUR_SECRET_KEY>`
+5. The app should now be deployed to Heroku - click the "Open App" button to view the deployed site.
 
 ## Credits
 
@@ -352,6 +430,7 @@ Manual testing was performed on the following aspects of the Add Recipe & Edit R
 - CSS & JS for Sticky Navbar functionality adapted from [W3Schools Example](https://www.w3schools.com/howto/howto_js_navbar_sticky.asp).
 - Search functionality adapted from Code Institute coursework mini project: https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/08-SearchingWithinTheDatabase/01-text_index_searching/static/js/script.js
 - Authentication functionality for register, login functionality adapted from Code Institute coursework mini project: https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/08-SearchingWithinTheDatabase/01-text_index_searching/app.py
+- Deployment section of README.md file adapted from: https://github.com/TravelTimN/ci-milestone04-dcd/blob/main/README.md#deployment
 
 ### Media
 - [Techsini](http://techsini.com/multi-mockup/) was used to create the mockup image used in the README file.
