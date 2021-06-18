@@ -216,7 +216,8 @@ h2 {
 }
 
 h2,
-.input-field>.fa-search {
+.input-field>.fa-search,
+.input-field>.label {
     color: rgb(58, 50, 56);
 }
 
@@ -275,7 +276,7 @@ h2,
 
 .user-display {
     font-style: italic;
-    color: rgb(58, 50, 56, 0.75);
+    color: rgb(58, 50, 56);
 }
 
 /* Register */
