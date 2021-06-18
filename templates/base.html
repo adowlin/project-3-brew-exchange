@@ -28,7 +28,7 @@
         <nav id="nav_bar">
             <div class="nav-wrapper valign-wrapper">
                 <a href="{{ url_for('get_recipes') }}" class="brand-logo right">Brew Exchange</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger" aria-label="Collabsible sidenav button"><i class="fas fa-bars"></i></a>
                 <ul class="left hide-on-med-and-down">
                     <li><a href="{{ url_for('get_recipes') }}"><i class="fas fa-home"></i>All Recipes</a></li>
                     {% if session.user %}
